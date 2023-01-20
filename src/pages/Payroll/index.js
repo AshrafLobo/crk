@@ -1,4 +1,3 @@
-import Faq from './Faq'
 import Payroll from "./Payroll";
 import PayrollBanner from "./PayrollBanner";
 import PayrollServices from "./PayrollServices";
@@ -10,7 +9,6 @@ import Pay100CardSection from "./Pay100CardSection";
 import ColoredBox from "./ColoredBox";
 
 export {
-  Faq,
   Payroll,
   PayrollBanner,
   PayrollServices,

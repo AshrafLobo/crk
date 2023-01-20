@@ -4,6 +4,7 @@ import ContactusBanner from "./ContactusBanner";
 import IssuerCard from "./IssuerCard";
 import NewsCard from "./NewsCard";
 import Footer from "./Footer";
+import Faq from "./Faq";
 import ReusableBanner from "./ReusableBanner";
 
 import { PayrollForm } from "./forms";
@@ -16,5 +17,6 @@ export {
   ContactusBanner,
   ReusableBanner,
   Footer,
+  Faq,
   PayrollForm,
 };
