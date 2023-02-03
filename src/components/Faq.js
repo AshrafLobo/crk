@@ -1,27 +1,42 @@
-import React from 'react';
-import{Typography, Accordion,
+import React from "react";
+import {
+  Typography,
+  Accordion,
   AccordionSummary,
-  AccordionDetails} from '@mui/material'
+  AccordionDetails,
+} from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-function Faq(props) {
+function Faq({
+  question,
+  answer,
+  id,
+  contentId,
+  panelId,
+  expanded,
+  setExpanded,
+}) {
+  const handleChange = (isExpanded, panel) => {
+    setExpanded(isExpanded ? panel : false);
+  };
+
   return (
-    <Accordion>
-	  <AccordionSummary
-		expandIcon={<ExpandMoreIcon />}
-		aria-controls="panel1a-content"
-		id="panel1a-header"
-	  >
-		<Typography>Accordion 1</Typography>
-	  </AccordionSummary>
-	  <AccordionDetails>
-		<Typography>
-		  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-		  Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-		  eget.
-		</Typography>
-	  </AccordionDetails>
-	</Accordion>
+    <Accordion
+      expanded={expanded === panelId}
+      onChange={(event, isExpanded) => handleChange(isExpanded, panelId)}
+    >
+      <AccordionSummary
+        style={{ background: "#3E4756", color: "#ffffff" }}
+        expandIcon={<ExpandMoreIcon style={{ color: "#ffffff" }} />}
+        id={id}
+        aria-controls={contentId}
+      >
+        <Typography variant="body1">{question}</Typography>
+      </AccordionSummary>
+      <AccordionDetails sx={{ p: 5 }}>
+        <Typography variant="body2">{answer}</Typography>
+      </AccordionDetails>
+    </Accordion>
   );
 }
 

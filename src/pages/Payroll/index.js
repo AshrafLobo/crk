@@ -7,6 +7,7 @@ import Pay100Banner from "./Pay100Banner";
 import Pay100Card from "./Pay100Card";
 import Pay100CardSection from "./Pay100CardSection";
 import ColoredBox from "./ColoredBox";
+import FaqSection from './FaqSection';
 
 export {
   Payroll,
@@ -18,4 +19,5 @@ export {
   PayrollFeatures,
   ColoredBox,
   PayrollFormSection,
+  FaqSection
 };

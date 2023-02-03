@@ -1,36 +1,14 @@
 import React from "react";
-import {
-  Grid,
-  Typography,
-  Stack,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-} from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { Grid, Typography, Stack } from "@mui/material";
 
 import { PayrollForm } from "../../components";
+import { FaqSection } from "./";
 
 function PayrollFormSection(props) {
   return (
     <Grid container sx={{ minHeight: "500px", width: "100%" }}>
       <Grid item xs={12} md={6} sx={{ minHeight: "500px" }}>
-        <Accordion>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel1a-content"
-            id="panel1a-header"
-          >
-            <Typography>Accordion 1</Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <Typography>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-              eget.
-            </Typography>
-          </AccordionDetails>
-        </Accordion>
+        <FaqSection />
       </Grid>
       <Grid item xs={12} md={6} sx={{ p: 2, textAlign: "center" }}>
         <Stack spacing={1} sx={{ py: 4 }}>
