@@ -12,11 +12,11 @@ function ColoredBox({ bgColor, color, image, imageAlt, title, text }) {
     >
       <Stack spacing={3}>
         <Stack direction="row" spacing={2} alignItems="center">
-          <img src={image} alt={imageAlt} height="20px" />
+          <img src={image} alt={imageAlt} height="25px" />
           <Typography
             variant="h6"
             component="p"
-            sx={{ fontSize: "18px", fontWeight: "bold" }}
+            sx={{ fontSize: "16px", fontWeight: "bold" }}
           >
             {title}
           </Typography>

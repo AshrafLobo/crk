@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Button, Grid, Stack, Typography } from "@mui/material";
 
-import { ColoredBox } from "./";
+import { ColoredBox } from "../../components";
 
 import FTP from "../../assets/customIcons/ftp.png";
 import Accounting from "../../assets/customIcons/accounting.png";

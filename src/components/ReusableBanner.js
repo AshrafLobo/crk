@@ -83,9 +83,10 @@ function ReusableBanner({
             variant="contained"
             onClick={handleButtonClick}
             sx={{
+              width: "fit-content",
               mx: { xs: "auto !important", md: "0 !important" },
-              maxWidth: "250px",
               py: "20px",
+              px: 5,
               borderRadius: "50px",
               backgroundColor: "#DDA01E",
               lineHeight: "0",

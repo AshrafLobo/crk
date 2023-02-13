@@ -15,10 +15,10 @@ function Pay100CardSection(props) {
       alignItems="center"
       height="100%"
     >
-      <Grid item xs={12} sm={4} md={6} lg={5} sx={{ my: { xs: 3, lg: 0 } }}>
+      <Grid item xs={12} sm={5} md={6} lg={5} sx={{ my: { xs: 3, lg: 0 } }}>
         <Pay100Card {...cards[0]} />
       </Grid>
-      <Grid item xs={12} sm={4} md={6} lg={5} sx={{ my: { xs: 3, lg: 0 } }}>
+      <Grid item xs={12} sm={5} md={6} lg={5} sx={{ my: { xs: 3, lg: 0 } }}>
         <Pay100Card {...cards[1]} />
       </Grid>
     </Grid>

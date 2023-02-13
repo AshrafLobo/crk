@@ -1,7 +1,8 @@
 import React from "react";
 import { Grid, Stack, Typography } from "@mui/material";
 
-import { ColoredBox, Pay100CardSection } from "./";
+import { ColoredBox } from "../../components";
+import { Pay100CardSection } from "./";
 
 import Fast from "../../assets/customIcons/fast.png";
 import Accurate from "../../assets/customIcons/accurate.png";

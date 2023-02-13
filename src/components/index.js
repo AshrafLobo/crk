@@ -1,3 +1,4 @@
+import ColoredBox from "./ColoredBox";
 import Navbar from "./Navbar";
 import Drawer from "./Drawer";
 import ContactusBanner from "./ContactusBanner";
@@ -10,6 +11,7 @@ import ReusableBanner from "./ReusableBanner";
 import { PayrollForm } from "./forms";
 
 export {
+  ColoredBox,
   Navbar,
   Drawer,
   IssuerCard,
