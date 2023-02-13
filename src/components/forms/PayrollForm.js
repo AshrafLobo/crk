@@ -1,5 +1,5 @@
 import React from "react";
-import { Stack, Button } from "@mui/material";
+import { Grid, Stack, Button } from "@mui/material";
 import { Formik, Form } from "formik";
 
 import * as Yup from "yup";
@@ -60,69 +60,84 @@ function PayrollForm(props) {
     >
       {(formik) => (
         <Form>
-          <Stack spacing={2}>
-            <Stack direction="row" spacing={2}>
+          <Grid container spacing={2}>
+            <Grid item xs={12} md={6}>
               <FormikControl
                 control="input"
                 type="text"
                 label="First name"
                 name="firstname"
               />
+			</Grid>
+			
+			<Grid item xs={12} md={6}>
               <FormikControl
                 control="input"
                 type="text"
                 label="Last name"
                 name="lastname"
               />
-            </Stack>
+            </Grid>
 
-            <Stack direction="row" spacing={2}>
+            <Grid item xs={12} md={6}>
               <FormikControl
                 control="input"
                 type="text"
                 label="Email"
                 name="email"
               />
+			</Grid>
+			
+			<Grid item xs={12} md={6}>
               <FormikControl
                 control="input"
                 type="text"
                 label="Phone number"
                 name="phoneNo"
               />
-            </Stack>
+            </Grid>
 
-            <Stack direction="row" spacing={2}>
+            <Grid item xs={12} md={6}>
               <FormikControl
                 control="input"
                 type="text"
                 label="Company"
                 name="company"
               />
+			</Grid>
+			
+			<Grid item xs={12} md={6}>
               <FormikControl
                 control="input"
                 type="text"
                 label="Job title"
                 name="jobTitle"
               />
-            </Stack>
+            </Grid>
 
-            <Stack direction="row" spacing={2}>
+            <Grid item xs={12} md={6}>
               <FormikControl
                 control="input"
                 type="text"
                 label="Number of employees"
                 name="noOfEmployees"
               />
+			</Grid>
+			
+			<Grid item xs={12} md={6}>
               <FormikControl
                 control="select"
                 label="Enquire about"
                 name="enquireAbout"
                 options={enquireOptions}
               />
-            </Stack>
+            </Grid>
 
-            <FormikControl control="textarea" label="Message" name="message" />
-            <Stack direction="row" justifyContent="flex-end">
+			<Grid item xs={12} spacing={2}>
+				<FormikControl control="textarea" label="Message" name="message" />
+			</Grid>
+			
+            <Stack direction="row" justifyContent="flex-end" sx={{ m:2 }}>
               <Button
                 type="submit"
                 variant="contained"
@@ -132,7 +147,7 @@ function PayrollForm(props) {
                 Submit
               </Button>
             </Stack>
-          </Stack>
+          </Grid>
         </Form>
       )}
     </Formik>

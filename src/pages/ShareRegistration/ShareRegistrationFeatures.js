@@ -18,7 +18,8 @@ function ShareRegistrationFeatures(props) {
 			maxWidth: '1000px',
             textAlign: "center",
             mx: 'auto',
-			mb: 5
+			mb: { xs: 3, md: 5 },
+			px: 2
           }}
         >
           <Typography
@@ -53,7 +54,7 @@ function ShareRegistrationFeatures(props) {
 
         <Grid container sx={{ maxWidth: "1000px", mx: 'auto' }}>
           {features.map((feature) => (
-            <Grid item xs={12} sm={4} key={`feature-${feature.id}`}>
+            <Grid item xs={12} sm={6} md={4} key={`feature-${feature.id}`}>
               <ColoredBox {...feature} />
             </Grid>
           ))}

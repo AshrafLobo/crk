@@ -12,7 +12,7 @@ import DTBTZLogo from "../../assets/issuerLogos/dtb_tz_logo_large.jpg";
 function ClientSection(props) {
   return (
     <>
-      <Stack spacing={0} sx={{ textAlign: "center", mt: 10 }}>
+      <Stack spacing={0} sx={{ maxWidth: '600px', textAlign: "center", mt: 10, mx: 'auto' }}>
         <Typography
           variant="body1"
           component="span"
@@ -20,9 +20,9 @@ function ClientSection(props) {
             bgcolor: "#3E4756",
             color: "#ffffff",
             width: "fit-content",
-            px: 2,
             mx: "auto",
             mb: 1,
+			px: 2,
             fontSize: "14px",
           }}
         >
@@ -34,7 +34,7 @@ function ClientSection(props) {
         <Typography
           variant="body1"
           component="p"
-          sx={{ color: "#A0A0A0", p: 0 }}
+          sx={{ color: "#A0A0A0"}}
         >
           Comp-rite Kenya Ltd handles share registration services for the
           following companies
@@ -44,7 +44,7 @@ function ClientSection(props) {
         container
         spacing={2}
         justifyContent="center"
-        sx={{ p: { xs: 0, md: 5 } }}
+        sx={{ p: { xs: 2, md: 5 } }}
       >
         {issuers.map((issuer) => (
           <Grid item xs={12} md={4} key={`issuer-${issuer.id}`}>
