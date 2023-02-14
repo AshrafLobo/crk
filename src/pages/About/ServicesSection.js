@@ -47,7 +47,7 @@ function ServicesSection(props) {
 
               <Typography
                 variant="h4"
-                component="h1"
+                component="h2"
                 color="white"
                 sx={{ fontWeight: "bold" }}
               >

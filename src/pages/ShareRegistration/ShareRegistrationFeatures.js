@@ -37,7 +37,7 @@ function ShareRegistrationFeatures(props) {
             SHARE REGISTRATION SERVICES
           </Typography>
 
-          <Typography variant="h4" component="h1" sx={{ fontWeight: "1000" }}>
+          <Typography variant="h4" component="h2" sx={{ fontWeight: "1000" }}>
             WHAT WE DO FOR YOU
           </Typography>
 

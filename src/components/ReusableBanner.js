@@ -77,27 +77,28 @@ function ReusableBanner({
           <Typography variant="body1" color="white">
             {text}
           </Typography>
-
-          <Button
-            type="button"
-            variant="contained"
-            onClick={handleButtonClick}
-            sx={{
-              width: "fit-content",
-              mx: { xs: "auto !important", md: "0 !important" },
-              py: "20px",
-              px: 5,
-              borderRadius: "50px",
-              backgroundColor: "#DDA01E",
-              lineHeight: "0",
-              "&:hover": {
-                bgcolor: "#DDA01E",
-                opacity: "0.9",
-              },
-            }}
-          >
-            {buttonText}
-          </Button>
+          {buttonText ? (
+            <Button
+              type="button"
+              variant="contained"
+              onClick={handleButtonClick}
+              sx={{
+                width: "fit-content",
+                mx: { xs: "auto !important", md: "0 !important" },
+                py: "20px",
+                px: 5,
+                borderRadius: "50px",
+                backgroundColor: "#DDA01E",
+                lineHeight: "0",
+                "&:hover": {
+                  bgcolor: "#DDA01E",
+                  opacity: "0.9",
+                },
+              }}
+            >
+              {buttonText}
+            </Button>
+          ) : null}
         </Stack>
       </Grid>
     </Grid>

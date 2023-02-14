@@ -30,7 +30,7 @@ function ClientSection(props) {
         >
           OUR ISSUERS
         </Typography>
-        <Typography variant="h4" component="h2" sx={{ fontWeight: "bold" }}>
+        <Typography variant="h4" component="h2" sx={{ fontWeight: "1000" }}>
           OUR CLIENTS
         </Typography>
         <Typography variant="body1" component="p" sx={{ color: "#A0A0A0" }}>
