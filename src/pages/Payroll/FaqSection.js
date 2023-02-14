@@ -7,7 +7,9 @@ function FaqSection(props) {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <Container sx={{ p: 3 }}>
+    <Container
+      sx={{ p: 3 }}
+    >
       {faqs.map((faq) => (
         <Faq
           key={faq.id}

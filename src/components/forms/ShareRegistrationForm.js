@@ -6,15 +6,27 @@ import "yup-phone-lite";
 
 import FormikControl from "./form-controls/FormikControl";
 
-function PayrollForm(props) {
-  const enquireOptions = [
-    { key: "Pay 100 Plus", value: "pay 100 plus" },
-    { key: "Payroll submission", value: "payroll submission" },
+function ShareRegistrationForm(props) {
+  const companyOptions = [
+    { key: "Athi River Mining", value: "athi river mining" },
+    { key: "Diamond Trust Bank Kenya", value: "diamond trust bank kenya" },
     {
-      key: "Payroll outsourcing services",
-      value: "payroll outsourcing services",
+      key: "Diamond Trust Bank Tanzania",
+      value: "diamond trust bank tanzania",
     },
-    { key: "Cloud backup", value: "cloud backup" },
+    { key: "Housing Finance Group", value: "housing finance group" },
+    { key: "Total Kenya", value: "total kenya" },
+    { key: "Other", value: "other" },
+  ];
+
+  const serviceOptions = [
+    { key: "Account status", value: "account status" },
+    { key: "Ammendement of details", value: "ammendement of details" },
+    {
+      key: "Dividend payment",
+      value: "dividend payment",
+    },
+    { key: "General correspondence", value: "general correspondence" },
     { key: "Other", value: "other" },
   ];
 
@@ -23,10 +35,11 @@ function PayrollForm(props) {
     lastname: "",
     email: "",
     phoneNo: "",
+    address: "",
+    idNumber: "",
     company: "",
-    jobTitle: "",
-    noOfEmployees: "",
-    enquireAbout: "",
+    cdsNumber: "",
+    service: "",
     message: "",
   };
 
@@ -39,10 +52,11 @@ function PayrollForm(props) {
     phoneNo: Yup.string()
       .phone("KE", "Please enter a valid phone number")
       .required("A phone number is required"),
-    company: Yup.string(),
-    jobTitle: Yup.string(),
-    noOfEmployees: Yup.string(),
-    enquireAbout: Yup.string().required("Please select an enquiry"),
+    address: Yup.string(),
+    idNumber: Yup.string(),
+    company: Yup.string().required("Please select a company"),
+    cdscNumber: Yup.string(),
+    service: Yup.string().required("Please select a service"),
     message: Yup.string().required("Please enter your message above"),
   });
 
@@ -100,8 +114,8 @@ function PayrollForm(props) {
               <FormikControl
                 control="input"
                 type="text"
-                label="Company"
-                name="company"
+                label="Address"
+                name="address"
               />
             </Grid>
 
@@ -109,26 +123,35 @@ function PayrollForm(props) {
               <FormikControl
                 control="input"
                 type="text"
-                label="Job title"
-                name="jobTitle"
-              />
-            </Grid>
-
-            <Grid item xs={12} md={6}>
-              <FormikControl
-                control="input"
-                type="text"
-                label="Number of employees"
-                name="noOfEmployees"
+                label="ID Number"
+                name="idNumber"
               />
             </Grid>
 
             <Grid item xs={12} md={6}>
               <FormikControl
                 control="select"
-                label="Enquire about"
-                name="enquireAbout"
-                options={enquireOptions}
+                label="Pick a company"
+                name="company"
+                options={companyOptions}
+              />
+            </Grid>
+
+            <Grid item xs={12} md={6}>
+              <FormikControl
+                control="input"
+                type="text"
+                label="CDSC/Certificate  Number"
+                name="cdscNumber"
+              />
+            </Grid>
+
+            <Grid item xs={12}>
+              <FormikControl
+                control="select"
+                label="Please select a service you would like to enquire about"
+                name="service"
+                options={serviceOptions}
               />
             </Grid>
 
@@ -157,4 +180,4 @@ function PayrollForm(props) {
   );
 }
 
-export default PayrollForm;
+export default ShareRegistrationForm;

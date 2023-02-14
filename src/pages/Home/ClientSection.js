@@ -6,7 +6,7 @@ import { IssuerCard } from "../../components";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 
 import TotalLogo from "../../assets/issuerLogos/total_logo_large.png";
-import WppLogo from "../../assets/issuerLogos/wpp_logo_large.jpg";
+import DTBKELogo from "../../assets/issuerLogos/dtb_ke_logo_large.jpg";
 import HFLogo from "../../assets/issuerLogos/hf_logo_large.jpg";
 
 function ClientSection(props) {
@@ -107,9 +107,9 @@ const issuers = [
 
   {
     id: 2,
-    name: "Wpp Scangroup",
-    description: "Marketing and communications",
-    logo: WppLogo,
+    name: "Diamond Trust Bank Kenya",
+    description: "Banking Group",
+    logo: DTBKELogo,
   },
   {
     id: 3,

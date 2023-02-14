@@ -1,9 +1,10 @@
 import React from "react";
 
 import {
+  ClientSection,
   ShareRegistrationBanner,
   ShareRegistrationFeatures,
-  ClientSection,
+  ShareRegistrationFormSection,
 } from "./";
 
 function ShareRegistration(props) {
@@ -12,6 +13,7 @@ function ShareRegistration(props) {
       <ShareRegistrationBanner />
       <ClientSection />
       <ShareRegistrationFeatures />
+      <ShareRegistrationFormSection />
     </>
   );
 }

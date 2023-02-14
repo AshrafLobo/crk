@@ -1,3 +1,4 @@
 import PayrollForm from "./PayrollForm";
+import ShareRegistrationForm from "./ShareRegistrationForm";
 
-export { PayrollForm };
+export { PayrollForm, ShareRegistrationForm };
