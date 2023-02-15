@@ -7,7 +7,7 @@ import PhoneIcon from "@mui/icons-material/Phone";
 function MapsSection(props) {
   return (
     <Grid container sx={{ height: "600px" }}>
-      <Grid item xs={12} md={6}>
+      <Grid item xs={12} md={6} sx={{ minHeight: '500px'}}>
         <MapContainer
           center={[-1.2500918195699124, 36.8208888268095]}
           zoom={13}
