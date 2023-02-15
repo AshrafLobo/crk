@@ -13,7 +13,7 @@ function FormikControl(props) {
     case "select":
       return <Select {...rest} />;
     case "textarea":
-      return <TextArea {...rest} />
+      return <TextArea {...rest} />;
     default:
       return null;
   }

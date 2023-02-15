@@ -7,7 +7,12 @@ import { ShareRegistrationForm } from "../../components/forms";
 function ShareRegistrationFormSection(props) {
   return (
     <Grid container sx={{ minHeight: "500px", width: "100%" }}>
-      <Grid item xs={12} md={6} sx={{ minHeight: "500px", display:'flex', alignItems: 'center' }}>
+      <Grid
+        item
+        xs={12}
+        md={6}
+        sx={{ minHeight: "500px", display: "flex", alignItems: "center" }}
+      >
         <FaqSection />
       </Grid>
       <Grid item xs={12} md={6} sx={{ p: 2, textAlign: "center" }}>
@@ -20,9 +25,9 @@ function ShareRegistrationFormSection(props) {
             shortly.
           </Typography>
         </Stack>
-		<Box sx={{ p: 3 }}>
-			<ShareRegistrationForm />
-		</Box>
+        <Box sx={{ p: 3 }}>
+          <ShareRegistrationForm />
+        </Box>
       </Grid>
     </Grid>
   );

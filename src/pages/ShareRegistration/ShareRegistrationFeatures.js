@@ -12,53 +12,53 @@ import { ColoredBox } from "../../components";
 function ShareRegistrationFeatures(props) {
   return (
     <Grid container sx={{ my: 10 }}>
-        <Stack
-          spacing={1}
+      <Stack
+        spacing={1}
+        sx={{
+          maxWidth: "1000px",
+          textAlign: "center",
+          mx: "auto",
+          mb: { xs: 3, md: 5 },
+          px: 2,
+        }}
+      >
+        <Typography
+          variant="body1"
+          component="span"
           sx={{
-			maxWidth: '1000px',
-            textAlign: "center",
-            mx: 'auto',
-			mb: { xs: 3, md: 5 },
-			px: 2
+            bgcolor: "#3E4756",
+            color: "#FFFFFF",
+            width: "fit-content",
+            mx: "auto",
+            px: 2,
+            fontSize: "14px",
           }}
         >
-          <Typography
-            variant="body1"
-            component="span"
-            sx={{
-              bgcolor: "#3E4756",
-              color: "#FFFFFF",
-              width: "fit-content",
-              mx: 'auto',
-              px: 2,
-              fontSize: "14px",
-            }}
-          >
-            SHARE REGISTRATION SERVICES
-          </Typography>
+          SHARE REGISTRATION SERVICES
+        </Typography>
 
-          <Typography variant="h4" component="h2" sx={{ fontWeight: "1000" }}>
-            WHAT WE DO FOR YOU
-          </Typography>
+        <Typography variant="h4" component="h2" sx={{ fontWeight: "1000" }}>
+          WHAT WE DO FOR YOU
+        </Typography>
 
-          <Typography
-            variant="body1"
-            component="p"
-            sx={{ maxWidth: '600px', color: "#A0A0A0", p: 0 }}
-          >
-            Comp-rite Kenya Ltd handles the following share registration
-            services on behalf of our issuers. Please fill in the contact form
-            below to enquire about any of these services.
-          </Typography>
-        </Stack>
+        <Typography
+          variant="body1"
+          component="p"
+          sx={{ maxWidth: "600px", color: "#A0A0A0", p: 0 }}
+        >
+          Comp-rite Kenya Ltd handles the following share registration services
+          on behalf of our issuers. Please fill in the contact form below to
+          enquire about any of these services.
+        </Typography>
+      </Stack>
 
-        <Grid container sx={{ maxWidth: "1000px", mx: 'auto' }}>
-          {features.map((feature) => (
-            <Grid item xs={12} sm={6} md={4} key={`feature-${feature.id}`}>
-              <ColoredBox {...feature} />
-            </Grid>
-          ))}
-        </Grid>
+      <Grid container sx={{ maxWidth: "1000px", mx: "auto" }}>
+        {features.map((feature) => (
+          <Grid item xs={12} sm={6} md={4} key={`feature-${feature.id}`}>
+            <ColoredBox {...feature} />
+          </Grid>
+        ))}
+      </Grid>
     </Grid>
   );
 }
