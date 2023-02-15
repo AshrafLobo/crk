@@ -6,13 +6,13 @@ import PhoneIcon from "@mui/icons-material/Phone";
 
 function MapsSection(props) {
   return (
-    <Grid container sx={{ height: "600px" }}>
-      <Grid item xs={12} md={6} sx={{ minHeight: '500px'}}>
+    <Grid container sx={{ height: { xs: "1000px", md: "500px"} }}>
+      <Grid item xs={12} md={6} sx={{height: {xs: '500px', md: '100%'}}}>
         <MapContainer
           center={[-1.2500918195699124, 36.8208888268095]}
           zoom={13}
           scrollWheelZoom={false}
-		  style={{ width: '100%', height: '100%'}}
+		  style={{ width: '100%', height: '100%' }}
         >
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -31,12 +31,13 @@ function MapsSection(props) {
         xs={12}
         md={6}
         sx={{
+		  height: {xs: '500px', md: '100%'},
           background: "#0F75BD",
           display: "flex",
           justifyContent: "center",
         }}
       >
-        <Stack spacing={5} sx={{ p: { xs: 2, md: 5, lg: 10 } }}>
+        <Stack spacing={5} sx={{ p: { xs: 5, lg: 10 } }}>
           <Typography
             variant="h4"
             component="h2"

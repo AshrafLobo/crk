@@ -94,6 +94,7 @@ function ReusableBanner({
                   bgcolor: "#DDA01E",
                   opacity: "0.9",
                 },
+				fontSize: {xs: '10px', sm: '0.875rem'}
               }}
             >
               {buttonText}
