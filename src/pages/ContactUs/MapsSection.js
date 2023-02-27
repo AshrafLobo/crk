@@ -6,13 +6,13 @@ import PhoneIcon from "@mui/icons-material/Phone";
 
 function MapsSection(props) {
   return (
-    <Grid container sx={{ height: { xs: "1000px", md: "500px"} }}>
-      <Grid item xs={12} md={6} sx={{height: {xs: '500px', md: '100%'}}}>
+    <Grid container sx={{ height: { xs: "1000px", md: "500px" } }}>
+      <Grid item xs={12} md={6} sx={{ height: { xs: "500px", md: "100%" } }}>
         <MapContainer
           center={[-1.2500918195699124, 36.8208888268095]}
           zoom={13}
           scrollWheelZoom={false}
-		  style={{ width: '100%', height: '100%' }}
+          style={{ width: "100%", height: "100%" }}
         >
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -20,8 +20,18 @@ function MapsSection(props) {
           />
           <Marker position={[-1.2500918195699124, 36.8208888268095]}>
             <Popup>
-              <Typography variant='body2' sx={{ fontSize: '14px', p: 0, m: '0 !important' }}>Muthaiga Mini Market, Limuru road</Typography>
-			  <Typography variant='body2' sx={{ fontSize: '14px', p: 0, m: '0 !important' }}>Nairobi, Kenya</Typography>
+              <Typography
+                variant="body2"
+                sx={{ fontSize: "14px", p: 0, m: "0 !important" }}
+              >
+                Muthaiga Mini Market, Limuru road
+              </Typography>
+              <Typography
+                variant="body2"
+                sx={{ fontSize: "14px", p: 0, m: "0 !important" }}
+              >
+                Nairobi, Kenya
+              </Typography>
             </Popup>
           </Marker>
         </MapContainer>
@@ -31,7 +41,7 @@ function MapsSection(props) {
         xs={12}
         md={6}
         sx={{
-		  height: {xs: '500px', md: '100%'},
+          height: { xs: "500px", md: "100%" },
           background: "#0F75BD",
           display: "flex",
           justifyContent: "center",

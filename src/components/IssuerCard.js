@@ -1,7 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Button, Card, Stack, Typography } from "@mui/material";
 
-function IssuerCard({ issuer: { logo, name, description } }) {
+function IssuerCard({ issuer: { id, src, name, title } }) {
+  const navigate = useNavigate();
+
   return (
     <Card
       sx={{
@@ -15,7 +18,7 @@ function IssuerCard({ issuer: { logo, name, description } }) {
       }}
     >
       <img
-        src={logo}
+        src={`http://localhost:5000/${src}`}
         alt={`${name} Logo`}
         aria-label={`${name} Logo`}
         width="85%"
@@ -50,7 +53,7 @@ function IssuerCard({ issuer: { logo, name, description } }) {
               color: "#A0A0A0",
             }}
           >
-            {description}
+            {title}
           </Typography>
         </Stack>
 
@@ -69,6 +72,7 @@ function IssuerCard({ issuer: { logo, name, description } }) {
               opacity: "0.9",
             },
           }}
+          onClick={() => navigate(`issuer/${id}`)}
         >
           View profile
         </Button>

@@ -9,3 +9,12 @@
 .active {
   color: #0a0a0a !important;
 }
+
+a {
+	color: #ffffff;
+	text-decoration: none;
+	
+	&:hover {
+		color: #DDA01E;
+	}
+}

@@ -1,15 +1,24 @@
-import React from "react";
-
+import React, { useState, useEffect } from "react";
+import {useNavigate} from 'react-router-dom';
 import { Button, Grid, Paper, Stack, Typography } from "@mui/material";
-import { IssuerCard } from "../../components";
 
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
-
-import TotalLogo from "../../assets/issuerLogos/total_logo_large.png";
-import DTBKELogo from "../../assets/issuerLogos/dtb_ke_logo_large.jpg";
-import HFLogo from "../../assets/issuerLogos/hf_logo_large.jpg";
+import { IssuerCard } from "../../components";
+import useData from "../../hooks/useData";
 
 function ClientSection(props) {
+  const [get] = useData();
+  const [issuers, setIssuers] = useState([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    (async () => {
+      const { data } = await get("issuers");
+      const firstThree = data.slice(0, 3);
+      setIssuers(firstThree);
+    })();
+  }, []);
+
   return (
     <Paper
       sx={{
@@ -65,11 +74,12 @@ function ClientSection(props) {
             paddingRight: 2,
           }}
         >
-          {issuers.map((issuer) => (
-            <Grid item xs={12} md={4} key={`issuer-${issuer.id}`}>
-              <IssuerCard issuer={issuer} />
-            </Grid>
-          ))}
+          {issuers &&
+            issuers.map((issuer) => (
+              <Grid item xs={12} md={4} key={`issuer-${issuer.id}`}>
+                <IssuerCard issuer={issuer} />
+              </Grid>
+            ))}
         </Grid>
 
         <Button
@@ -89,6 +99,7 @@ function ClientSection(props) {
               opacity: "0.9",
             },
           }}
+		  onClick={() => navigate('share_registration')}
         >
           See more
         </Button>
@@ -96,27 +107,5 @@ function ClientSection(props) {
     </Paper>
   );
 }
-
-const issuers = [
-  {
-    id: 1,
-    name: "Total Kenya",
-    description: "Oil and petroleum suppliers",
-    logo: TotalLogo,
-  },
-
-  {
-    id: 2,
-    name: "Diamond Trust Bank Kenya",
-    description: "Banking Group",
-    logo: DTBKELogo,
-  },
-  {
-    id: 3,
-    name: "Housing Finance Group",
-    description: "Morgage finance provider",
-    logo: HFLogo,
-  },
-];
 
 export default ClientSection;

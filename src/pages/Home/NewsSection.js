@@ -1,13 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Grid, Paper, Stack, Typography } from "@mui/material";
-import { NewsCard } from "../../components";
+import {useNavigate} from 'react-router-dom';
 
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 
-import TotalLogo from "../../assets/issuerLogos/total_logo_small.png";
-import HFLogo from "../../assets/issuerLogos/hf_logo_small.png";
+import { NewsCard } from "../../components";
+import useData from "../../hooks/useData";
 
 function NewsSection(props) {
+  const [get] = useData();
+  const [news, setNews] = useState([]);
+  const navigate = useNavigate();
+  
+  useEffect(() => {
+    (async () => {
+      let { data } = await get("news");
+      const sortedData = data.sort(
+        (a, b) => new Date(b.dateUpdated) - new Date(a.dateUpdated)
+      );
+      setNews(sortedData.slice(0, 3));
+    })();
+  }, []);
+
   return (
     <Paper
       sx={{
@@ -61,11 +75,12 @@ function NewsSection(props) {
             paddingRight: 2,
           }}
         >
-          {news.map((item) => (
-            <Grid item xs={12} md={4} key={`issuer-${item.id}`}>
-              <NewsCard news={item} />
-            </Grid>
-          ))}
+          {news &&
+            news.map((item) => (
+              <Grid item xs={12} md={4} key={`issuer-${item.id}`}>
+                <NewsCard news={item} />
+              </Grid>
+            ))}
         </Grid>
 
         <Button
@@ -85,6 +100,7 @@ function NewsSection(props) {
               opacity: "0.9",
             },
           }}
+		  onClick={() => navigate('news')}
         >
           See more
         </Button>
@@ -92,37 +108,5 @@ function NewsSection(props) {
     </Paper>
   );
 }
-
-const news = [
-  {
-    id: 1,
-    name: "Housing Finance Group",
-    date: "Monday, December 6, 2021",
-    time: "9:44 AM",
-    title:
-      "HF Group Plc - Unaudited Financial Statements & Other Disclosures for the Period Ended 30-Sep-2021",
-    text: "The following are HF Group Plc - Unaudited Financial Statements & Other Disclosures for the Period Ended 30-Sep-2021. Click the link bellow to read the full article.",
-    logo: HFLogo,
-  },
-
-  {
-    id: 2,
-    name: "Housing Finance Group",
-    date: "Tuesday, November 16, 2021",
-    time: "9:35 AM",
-    title: "HF Group Plc - Shareholders Update",
-    text: "HF Group Plc has commenced the process of inviting strategic investors to acquire a stake in the Company (the Proposed Transaction) as disclosed in the published 2020 Financial Statements. Read the full article by clicking the link below.",
-    logo: HFLogo,
-  },
-  {
-    id: 3,
-    name: "Total Kenya",
-    date: "Friday, October 1, 2021",
-    time: "8:06 AM",
-    title: "TotalEnergies PLC - Appointment of Director & Chairman",
-    text: "The Board of Directors of TotalEnergies Marketing Kenya Plc is pleased to announce the appointment of Mr. Olivier Van Parys as a Director and Chairman of the Board with effect from 21 September 2021. Read the full article by clicking the link below",
-    logo: TotalLogo,
-  },
-];
 
 export default NewsSection;

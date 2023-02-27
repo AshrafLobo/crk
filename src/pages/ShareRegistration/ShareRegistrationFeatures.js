@@ -11,7 +11,7 @@ import { ColoredBox } from "../../components";
 
 function ShareRegistrationFeatures(props) {
   return (
-    <Grid container sx={{ my: 10 }}>
+    <Grid container sx={{ my: 5 }}>
       <Stack
         spacing={1}
         sx={{

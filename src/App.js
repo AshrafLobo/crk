@@ -2,7 +2,15 @@ import { Route, Routes } from "react-router-dom";
 import "./App.scss";
 
 import { Footer, Navbar } from "./components";
-import { Home, About, ContactUs, Payroll, ShareRegistration } from "./pages";
+import {
+  Home,
+  About,
+  ContactUs,
+  News,
+  Payroll,
+  ShareRegistration,
+  Issuer,
+} from "./pages";
 
 function App() {
   return (
@@ -13,7 +21,9 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact_us" element={<ContactUs />} />
         <Route path="/payroll" element={<Payroll />} />
+		<Route path="/news" element={<News />} />
         <Route path="/share_registration" element={<ShareRegistration />} />
+        <Route path="/issuer/:id" element={<Issuer />} />
       </Routes>
       <Footer />
     </>

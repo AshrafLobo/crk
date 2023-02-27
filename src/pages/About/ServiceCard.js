@@ -6,7 +6,7 @@ import CardBackground1 from "../../assets/card_background1.png";
 import CardBackground2 from "../../assets/card_background2.png";
 
 function ServiceCard({
-  service: { image, imageAlt, service, serviceText, buttonText },
+  service: { image, imageAlt, service, serviceText, buttonText, handleButtonClick },
 }) {
   return (
     <Card
@@ -105,6 +105,7 @@ function ServiceCard({
               lineHeight: "0",
               fontSize: { xs: "12px", sm: "10px", lg: "12px" },
             }}
+			onClick={handleButtonClick}
           >
             {buttonText}
           </Button>

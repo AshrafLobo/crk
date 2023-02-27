@@ -1,5 +1,6 @@
 import React from "react";
 import { Grid, Stack, Typography, Container, Divider } from "@mui/material";
+import dateformat from "dateformat";
 
 import PlaceIcon from "@mui/icons-material/Place";
 import PhoneIcon from "@mui/icons-material/Phone";
@@ -40,7 +41,7 @@ function Footer(props) {
               width="50px"
               height="50px"
             />
-            <Typography variant="body1" mx={1}>
+            <Typography variant="body1" mx={1} sx={{fontSize: '18px'}}>
               Comp-rite Kenya
             </Typography>
           </Stack>
@@ -123,19 +124,23 @@ function Footer(props) {
           >
             Useful links
           </Typography>
-          <Typography variant="body1">Nairobi Securities Exchange</Typography>
-          <Typography variant="body1">CDSC</Typography>
-          <Typography variant="body1">
+          <Typography variant="body1" sx={{display: 'block'}} as="a" href="https://www.nse.co.ke/">
+            Nairobi Securities Exchange
+          </Typography>
+          <Typography variant="body1" sx={{display: 'block'}} as="a" href="https://www.cdsckenya.com/">
+            CDSC
+          </Typography>
+          <Typography variant="body1" sx={{display: 'block'}} as="a" href="https://www.cma.or.ke/">
             Capital Markets Authority(CMA)
           </Typography>
-          <Typography variant="body1">
+          <Typography variant="body1" sx={{display: 'block'}} as="a" href="https://ufaa.go.ke/">
             Unclaimed Financial Assets Authority(UFAA)
           </Typography>
         </Grid>
       </Grid>
       <Divider light sx={{ my: 2, borderColor: "#606060" }} />
       <Typography variant="body1" textAlign="center">
-        © Copyright 2022 Comp-rite Kenya
+        © Copyright {dateformat(Date.now(), "yyyy")} Comp-rite Kenya
       </Typography>
     </Container>
   );

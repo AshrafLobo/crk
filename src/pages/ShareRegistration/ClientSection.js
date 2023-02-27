@@ -42,7 +42,7 @@ function ClientSection(props) {
         container
         spacing={2}
         justifyContent="center"
-        sx={{ p: { xs: 2, md: 5, lg: 10 } }}
+        sx={{ width: "100%", p: { xs: 2, md: 5, lg: 10 } }}
       >
         {issuers.map((issuer) => (
           <Grid item xs={12} md={4} key={`issuer-${issuer.id}`}>

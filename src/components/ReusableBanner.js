@@ -90,11 +90,12 @@ function ReusableBanner({
                 borderRadius: "50px",
                 backgroundColor: "#DDA01E",
                 lineHeight: "0",
+                whiteSpace: "normal",
                 "&:hover": {
                   bgcolor: "#DDA01E",
                   opacity: "0.9",
                 },
-				fontSize: {xs: '10px', sm: '0.875rem'}
+                fontSize: { xs: "12px", sm: "0.875rem" },
               }}
             >
               {buttonText}

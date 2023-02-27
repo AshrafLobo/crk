@@ -1,8 +1,12 @@
 import React from "react";
 import { Stack } from "@mui/system";
 import { Avatar, Divider, Typography } from "@mui/material";
+import dateformat from "dateformat";
 
-function TimelineItem({ timeline: { index, year, title, timelineText } }) {
+function TimelineItem({ timeline: { id, title, timelineDate, description } }) {
+  const date = new Date(timelineDate);
+  const year = dateformat(date, "yyyy");
+  
   return (
     <>
       <Stack spacing={3}>
@@ -33,8 +37,8 @@ function TimelineItem({ timeline: { index, year, title, timelineText } }) {
             </Typography>
           </Stack>
 
-          <Typography variant="body1" sx={{ color: "" }}>
-            {timelineText}
+          <Typography variant="body1">
+            {description}
           </Typography>
         </Stack>
         <Divider
@@ -45,7 +49,7 @@ function TimelineItem({ timeline: { index, year, title, timelineText } }) {
             },
           }}
         >
-          <Avatar sx={{ bgcolor: "#ffffff", color: "#3E4756" }}>{index}</Avatar>
+          <Avatar sx={{ bgcolor: "#ffffff", color: "#3E4756" }}>{id}</Avatar>
         </Divider>
       </Stack>
     </>

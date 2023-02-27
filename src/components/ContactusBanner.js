@@ -1,9 +1,11 @@
 import React from "react";
-
+import { useNavigate } from "react-router-dom";
 import { Button, Stack, Typography } from "@mui/material";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 
 function ContactusBanner(props) {
+  const navigate = useNavigate();
+
   return (
     <Stack
       spacing={3}
@@ -29,6 +31,7 @@ function ContactusBanner(props) {
         type="button"
         variant="contained"
         endIcon={<ArrowRightIcon />}
+        onClick={() => navigate("contact_us")}
         sx={{
           width: "200px",
           alignSelf: "center",

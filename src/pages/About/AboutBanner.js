@@ -1,12 +1,12 @@
 import React from "react";
-
+import {useNavigate} from "react-router-dom";
 import ReusableBanner from "../../components/ReusableBanner";
 import Background1 from "../../assets/background-1.png";
 
 function AboutBanner(props) {
-  return <ReusableBanner {...options} />;
-}
-const options = {
+	const navigate = useNavigate();
+	
+  const options = {
   image: Background1,
   imageAlt: "Comp-rite Office",
   subtitle: "ABOUT US",
@@ -18,7 +18,11 @@ const options = {
   solutions to a diverse range of corporations in Kenya.`,
   buttonText: "Send us a message",
   handleButtonClick: function handleClick() {
-    alert(`${this.title} CLICKED`);
+    navigate('/contact_us');
   },
 };
+
+  return <ReusableBanner {...options} />;
+}
+
 export default AboutBanner;

@@ -1,7 +1,14 @@
 import React from "react";
+import dateformat from "dateformat";
 import { Button, Box, Card, Divider, Stack, Typography } from "@mui/material";
 
-function NewsCard({ news: { logo, name, date, time, title, text } }) {
+function NewsCard({
+  news: { issuerName, src, title, article, dateUpdated, originalSrc },
+}) {
+  const date = new Date(dateUpdated);
+  const mediumDate = dateformat(date, "mediumDate");
+  const shortTime = dateformat(date, "shortTime");
+
   return (
     <Card
       sx={{
@@ -16,9 +23,9 @@ function NewsCard({ news: { logo, name, date, time, title, text } }) {
     >
       <Stack direction="row" justifyContent="space-between">
         <img
-          src={logo}
-          alt={`${name} Logo Small`}
-          aria-label={`${name} Logo Small`}
+          src={`http://localhost:5000/${src}`}
+          alt={`${issuerName} Logo Small`}
+          aria-label={`${issuerName} Logo Small`}
           width="50px"
           height="50px"
           style={{ objectFit: "contain" }}
@@ -39,7 +46,7 @@ function NewsCard({ news: { logo, name, date, time, title, text } }) {
               color: "#A0A0A0",
             }}
           >
-            {date}
+            {mediumDate}
           </Typography>
           <Typography
             variant="subtitle2"
@@ -55,7 +62,7 @@ function NewsCard({ news: { logo, name, date, time, title, text } }) {
               color: "#A0A0A0",
             }}
           >
-            {time}
+            {shortTime}
           </Typography>
         </Stack>
       </Stack>
@@ -65,6 +72,7 @@ function NewsCard({ news: { logo, name, date, time, title, text } }) {
           variant="body1"
           component="p"
           sx={{
+            mt: 1,
             textOverflow: "ellipsis",
             overflow: "hidden",
             whiteSpace: "nowrap",
@@ -88,7 +96,7 @@ function NewsCard({ news: { logo, name, date, time, title, text } }) {
             color: "#A0A0A0",
           }}
         >
-          {name}
+          {issuerName}
         </Typography>
       </Stack>
 
@@ -116,7 +124,7 @@ function NewsCard({ news: { logo, name, date, time, title, text } }) {
             WebkitBoxOrient: "vertical",
           }}
         >
-          {text}
+          {article}
         </Typography>
       </Box>
 
@@ -135,6 +143,7 @@ function NewsCard({ news: { logo, name, date, time, title, text } }) {
             opacity: "0.9",
           },
         }}
+        onClick={() => window.open(originalSrc, "_blank")}
       >
         View article
       </Button>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { IconButton } from "@mui/material";
 import Carousel from "react-multi-carousel";
 
@@ -7,6 +7,7 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 
 import { TimelineItem } from "./";
+import useData from "../../hooks/useData";
 
 const responsive = {
   xl: {
@@ -32,6 +33,15 @@ const responsive = {
 };
 
 function Timeline(props) {
+  const [get] = useData();
+  const [timelines, setTimelines] = useState([]);
+  useEffect(() => {
+	(async () => {
+      const { data } = await get("timelines");
+      setTimelines(data);
+    })();
+  }, [])
+  
   const handleRightClick = () => {
     alert("Right clicked");
   };
@@ -49,8 +59,8 @@ function Timeline(props) {
       draggable={false}
       className="carousel"
     >
-      {TIMELINES.map((timeline) => (
-        <TimelineItem timeline={timeline} key={`Timeline-${timeline.index}`} />
+      {timelines && timelines.map((timeline) => (
+        <TimelineItem timeline={timeline} key={`Timeline-${timeline.id}`} />
       ))}
     </Carousel>
   );
@@ -90,7 +100,7 @@ function LeftArrow({ onClick, ...rest }) {
   );
 }
 
-const TIMELINES = [
+/* const TIMELINES = [
   {
     index: 1,
     year: "1972",
@@ -131,6 +141,6 @@ const TIMELINES = [
     timelineText:
       "Successfully processed the IPO for the FIRST listed company in Kenya.",
   },
-];
+]; */
 
 export default Timeline;

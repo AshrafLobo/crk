@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button, Grid, IconButton, Stack, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import CircleIcon from "@mui/icons-material/Circle";
@@ -9,6 +10,73 @@ import Background2 from "../../assets/background-2.png";
 import Background3 from "../../assets/background-3.png";
 
 function Banner(props) {
+  const navigate = useNavigate();
+  const slides = [
+    {
+      title: (
+        <Typography
+          variant="h3"
+          component="h1"
+          color="white"
+          sx={{ fontWeight: "bold" }}
+        >
+          Welcome to <br /> Comp-rite Kenya Limited
+        </Typography>
+      ),
+      description: `Comp-rite Kenya Ltd is a locally owned and operated company that has
+      been in existence since 1972. Our core strengths have always been
+      technology focused, and over the years, Comp-rite remains at the
+      forefront of providing customized software and technology based
+      solutions to a diverse range of corporations in Kenya.`,
+      image: Background1,
+      imageAlt: "Comp-rite Office",
+      buttonText: "Send us a message",
+      buttonAction: function () {
+        navigate("contact_us");
+      },
+    },
+    {
+      title: (
+        <Typography
+          variant="h3"
+          component="h1"
+          color="white"
+          sx={{ fontWeight: "bold" }}
+        >
+          Learn about our <br /> Payroll Services
+        </Typography>
+      ),
+      description: `Pay100 Plus is a Kenyan payroll processing system for small, medium, 
+      and large companies. It offers numerous benefits at an affordable cost.`,
+      image: Background3,
+      imageAlt: "Comp-rite Payroll",
+      buttonText: "Find out more",
+      buttonAction: function () {
+        navigate("payroll");
+      },
+    },
+    {
+      title: (
+        <Typography
+          variant="h3"
+          component="h1"
+          color="white"
+          sx={{ fontWeight: "bold" }}
+        >
+          Learn about our <br /> Shareholder Services
+        </Typography>
+      ),
+      description: `We provide share registration services to companies of all sizes. 
+      Our services are powered by our custom built solution, iSharePro.`,
+      image: Background2,
+      imageAlt: "Comp-rite Shares Department",
+      buttonText: "Find out more",
+      buttonAction: function () {
+        navigate("share_registration");
+      },
+    },
+  ];
+
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const { title, description, image, imageAlt, buttonText, buttonAction } =
@@ -128,71 +196,5 @@ function Banner(props) {
     </Grid>
   );
 }
-
-const slides = [
-  {
-    title: (
-      <Typography
-        variant="h3"
-        component="h1"
-        color="white"
-        sx={{ fontWeight: "bold" }}
-      >
-        Welcome to <br /> Comp-rite Kenya Limited
-      </Typography>
-    ),
-    description: `Comp-rite Kenya Ltd is a locally owned and operated company that has
-    been in existence since 1972. Our core strengths have always been
-    technology focused, and over the years, Comp-rite remains at the
-    forefront of providing customized software and technology based
-    solutions to a diverse range of corporations in Kenya.`,
-    image: Background1,
-    imageAlt: "Comp-rite Office",
-    buttonText: "Send us a message",
-    buttonAction: function () {
-      alert("Slide 1 Clicked");
-    },
-  },
-  {
-    title: (
-      <Typography
-        variant="h3"
-        component="h1"
-        color="white"
-        sx={{ fontWeight: "bold" }}
-      >
-        Learn about our <br /> Payroll Services
-      </Typography>
-    ),
-    description: `Pay100 Plus is a Kenyan payroll processing system for small, medium, 
-    and large companies. It offers numerous benefits at an affordable cost.`,
-    image: Background3,
-    imageAlt: "Comp-rite Payroll",
-    buttonText: "Find out more",
-    buttonAction: function () {
-      alert("Slide 3 Clicked");
-    },
-  },
-  {
-    title: (
-      <Typography
-        variant="h3"
-        component="h1"
-        color="white"
-        sx={{ fontWeight: "bold" }}
-      >
-        Learn about our <br /> Shareholder Services
-      </Typography>
-    ),
-    description: `We provide share registration services to companies of all sizes. 
-    Our services are powered by our custom built solution, iSharePro.`,
-    image: Background2,
-    imageAlt: "Comp-rite Shares Department",
-    buttonText: "Find out more",
-    buttonAction: function () {
-      alert("Slide 2 Clicked");
-    },
-  },
-];
 
 export default Banner;
