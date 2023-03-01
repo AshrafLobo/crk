@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import {useNavigate} from 'react-router-dom';
+import React, { useState, useLayoutEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button, Grid, Paper, Stack, Typography } from "@mui/material";
 
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
@@ -11,7 +11,7 @@ function ClientSection(props) {
   const [issuers, setIssuers] = useState([]);
   const navigate = useNavigate();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     (async () => {
       const { data } = await get("issuers");
       const firstThree = data.slice(0, 3);
@@ -99,7 +99,7 @@ function ClientSection(props) {
               opacity: "0.9",
             },
           }}
-		  onClick={() => navigate('share_registration')}
+          onClick={() => navigate("share_registration")}
         >
           See more
         </Button>

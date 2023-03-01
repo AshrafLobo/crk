@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Stack, Grid, Typography } from "@mui/material";
 
 import { IssuerCard } from "../../components";
-import TotalLogo from "../../assets/issuerLogos/total_logo_large.png";
-import HFLogo from "../../assets/issuerLogos/hf_logo_large.jpg";
-import ARMLogo from "../../assets/issuerLogos/arm_logo_large.png";
-import DTBKELogo from "../../assets/issuerLogos/dtb_ke_logo_large.jpg";
-import DTBTZLogo from "../../assets/issuerLogos/dtb_tz_logo_large.jpg";
+import useData from "../../hooks/useData";
 
 function ClientSection(props) {
+  const [get] = useData();
+  const [issuers, setIssuers] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const { data } = await get("issuers");
+      setIssuers(data);
+    })();
+  }, []);
+
   return (
     <>
       <Stack
@@ -44,48 +50,15 @@ function ClientSection(props) {
         justifyContent="center"
         sx={{ width: "100%", p: { xs: 2, md: 5, lg: 10 } }}
       >
-        {issuers.map((issuer) => (
-          <Grid item xs={12} md={4} key={`issuer-${issuer.id}`}>
-            <IssuerCard issuer={issuer} />
-          </Grid>
-        ))}
+        {issuers &&
+          issuers.map((issuer) => (
+            <Grid item xs={12} md={4} key={`issuer-${issuer.id}`}>
+              <IssuerCard issuer={issuer} />
+            </Grid>
+          ))}
       </Grid>
     </>
   );
 }
-
-const issuers = [
-  {
-    id: 1,
-    name: "Total Kenya",
-    description: "Oil and petroleum suppliers",
-    logo: TotalLogo,
-  },
-
-  {
-    id: 2,
-    name: "Housing Finance Group",
-    description: "Morgage finance provider",
-    logo: HFLogo,
-  },
-  {
-    id: 3,
-    name: "Athi River Mining",
-    description: "Mining and manufacturing",
-    logo: ARMLogo,
-  },
-  {
-    id: 4,
-    name: "Diamond Trust Bank Kenya",
-    description: "Banking Group",
-    logo: DTBKELogo,
-  },
-  {
-    id: 5,
-    name: "Diamond Trust Bank Tanzania",
-    description: "Banking Group",
-    logo: DTBTZLogo,
-  },
-];
 
 export default ClientSection;

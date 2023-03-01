@@ -6,15 +6,32 @@
   position: unset !important;
 }
 
-.active {
-  color: #0a0a0a !important;
+.navbar {
+  .active {
+    color: #0a0a0a !important;
+  }
 }
 
-a {
-	color: #ffffff;
-	text-decoration: none;
-	
-	&:hover {
-		color: #DDA01E;
-	}
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+
+  &:hover {
+    color: #dda01e;
+  }
+}
+
+.issuersList {
+  a {
+    color: #0a0a0a;
+    text-decoration: none;
+
+    &:hover {
+      color: #dda01e;
+    }
+  }
+
+  .active {
+    color: #dda01e !important;
+  }
 }

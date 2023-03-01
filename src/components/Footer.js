@@ -14,6 +14,7 @@ import Twitter from "../assets/social/twitter.png";
 function Footer(props) {
   return (
     <Container
+      className="footer"
       maxWidth="xl"
       sx={{
         width: "100%",
@@ -41,7 +42,7 @@ function Footer(props) {
               width="50px"
               height="50px"
             />
-            <Typography variant="body1" mx={1} sx={{fontSize: '18px'}}>
+            <Typography variant="body1" mx={1} sx={{ fontSize: "18px" }}>
               Comp-rite Kenya
             </Typography>
           </Stack>
@@ -124,16 +125,36 @@ function Footer(props) {
           >
             Useful links
           </Typography>
-          <Typography variant="body1" sx={{display: 'block'}} as="a" href="https://www.nse.co.ke/">
+          <Typography
+            variant="body1"
+            sx={{ display: "block" }}
+            as="a"
+            href="https://www.nse.co.ke/"
+          >
             Nairobi Securities Exchange
           </Typography>
-          <Typography variant="body1" sx={{display: 'block'}} as="a" href="https://www.cdsckenya.com/">
+          <Typography
+            variant="body1"
+            sx={{ display: "block" }}
+            as="a"
+            href="https://www.cdsckenya.com/"
+          >
             CDSC
           </Typography>
-          <Typography variant="body1" sx={{display: 'block'}} as="a" href="https://www.cma.or.ke/">
+          <Typography
+            variant="body1"
+            sx={{ display: "block" }}
+            as="a"
+            href="https://www.cma.or.ke/"
+          >
             Capital Markets Authority(CMA)
           </Typography>
-          <Typography variant="body1" sx={{display: 'block'}} as="a" href="https://ufaa.go.ke/">
+          <Typography
+            variant="body1"
+            sx={{ display: "block" }}
+            as="a"
+            href="https://ufaa.go.ke/"
+          >
             Unclaimed Financial Assets Authority(UFAA)
           </Typography>
         </Grid>

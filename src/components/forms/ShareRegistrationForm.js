@@ -31,8 +31,8 @@ function ShareRegistrationForm(props) {
   ];
 
   const initialValues = {
-    firstname: "",
-    lastname: "",
+    firstName: "",
+    lastName: "",
     email: "",
     phoneNo: "",
     address: "",
@@ -44,8 +44,8 @@ function ShareRegistrationForm(props) {
   };
 
   const validationSchema = Yup.object({
-    firstname: Yup.string().required("Please enter your first name"),
-    lastname: Yup.string().required("Please enter your last name"),
+    firstName: Yup.string().required("Please enter your first name"),
+    lastName: Yup.string().required("Please enter your last name"),
     email: Yup.string()
       .email("Please enter a valid email address")
       .required("Please enter your email address "),
@@ -79,7 +79,7 @@ function ShareRegistrationForm(props) {
                 control="input"
                 type="text"
                 label="First name"
-                name="firstname"
+                name="firstName"
               />
             </Grid>
 
@@ -88,7 +88,7 @@ function ShareRegistrationForm(props) {
                 control="input"
                 type="text"
                 label="Last name"
-                name="lastname"
+                name="lastName"
               />
             </Grid>
 

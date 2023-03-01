@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Grid, Stack, Typography } from "@mui/material";
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 import { ServiceCard } from "./";
 
@@ -8,27 +8,27 @@ import ServiceCardImage1 from "../../assets/services_image1.png";
 import ServiceCardImage2 from "../../assets/services_image2.png";
 
 function ServicesSection(props) {
-	const navigate = useNavigate()
+  const navigate = useNavigate();
   const SERVICES = [
-  {
-    image: ServiceCardImage1,
-    imageAlt: "Payroll Services",
-    service: "PAYROLL",
-    serviceText:
-      "Pay100 Plus is a Kenyan payroll processing system for small, medium, and large companies. It offers numerous benefits at an affordable cost.",
-    buttonText: "PAYROLL SERVICES",
-	handleButtonClick: () => navigate('/payroll')
-  },
-  {
-    image: ServiceCardImage2,
-    imageAlt: "Shareholder Services",
-    service: "SHAREHOLDER SERVICES",
-    serviceText:
-      "We provide share registration services to companies of all sizes. Our services are powered by our custom built solution, iSharePro.",
-    buttonText: "SHAREHOLDER SERVICES",
-	handleButtonClick: () => navigate('/share_registration')
-  },
-];
+    {
+      image: ServiceCardImage1,
+      imageAlt: "Payroll Services",
+      service: "PAYROLL",
+      serviceText:
+        "Pay100 Plus is a Kenyan payroll processing system for small, medium, and large companies. It offers numerous benefits at an affordable cost.",
+      buttonText: "PAYROLL SERVICES",
+      handleButtonClick: () => navigate("/payroll"),
+    },
+    {
+      image: ServiceCardImage2,
+      imageAlt: "Shareholder Services",
+      service: "SHAREHOLDER SERVICES",
+      serviceText:
+        "We provide share registration services to companies of all sizes. Our services are powered by our custom built solution, iSharePro.",
+      buttonText: "SHAREHOLDER SERVICES",
+      handleButtonClick: () => navigate("/share_registration"),
+    },
+  ];
 
   return (
     <Box sx={{ position: "relative" }}>

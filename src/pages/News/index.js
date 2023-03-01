@@ -1,5 +1,5 @@
-import News from './News'
+import News from "./News";
+import NewsBanner from "./NewsBanner";
+import NewsSection from "./NewsSection";
 
-export {
-	News
-};
+export { News, NewsBanner, NewsSection };

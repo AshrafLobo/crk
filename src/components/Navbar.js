@@ -19,7 +19,11 @@ function Navbar(props) {
   const isMatch = useMediaQuery(theme.breakpoints.down("lg"));
 
   return (
-    <AppBar position="sticky" sx={{ bgcolor: "white", color: "#0A0A0A" }}>
+    <AppBar
+      className="navbar"
+      position="sticky"
+      sx={{ bgcolor: "white", color: "#0A0A0A" }}
+    >
       <Toolbar>
         <IconButton size="large" color="inherit" disableRipple>
           <img
@@ -67,6 +71,10 @@ function Navbar(props) {
                 borderRadius: "25px",
                 backgroundColor: "#0F75BD",
               }}
+              onClick={() =>
+                (window.location.href =
+                  "https://secure.comp-rite.co.ke/register/login")
+              }
             >
               AGM portal
             </Button>

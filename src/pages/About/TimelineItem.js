@@ -6,7 +6,7 @@ import dateformat from "dateformat";
 function TimelineItem({ timeline: { id, title, timelineDate, description } }) {
   const date = new Date(timelineDate);
   const year = dateformat(date, "yyyy");
-  
+
   return (
     <>
       <Stack spacing={3}>
@@ -37,9 +37,7 @@ function TimelineItem({ timeline: { id, title, timelineDate, description } }) {
             </Typography>
           </Stack>
 
-          <Typography variant="body1">
-            {description}
-          </Typography>
+          <Typography variant="body1">{description}</Typography>
         </Stack>
         <Divider
           variant="middle"

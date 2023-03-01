@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { IconButton } from "@mui/material";
 import Carousel from "react-multi-carousel";
 
@@ -36,12 +36,12 @@ function Timeline(props) {
   const [get] = useData();
   const [timelines, setTimelines] = useState([]);
   useEffect(() => {
-	(async () => {
+    (async () => {
       const { data } = await get("timelines");
       setTimelines(data);
     })();
-  }, [])
-  
+  }, []);
+
   const handleRightClick = () => {
     alert("Right clicked");
   };
@@ -59,9 +59,10 @@ function Timeline(props) {
       draggable={false}
       className="carousel"
     >
-      {timelines && timelines.map((timeline) => (
-        <TimelineItem timeline={timeline} key={`Timeline-${timeline.id}`} />
-      ))}
+      {timelines &&
+        timelines.map((timeline) => (
+          <TimelineItem timeline={timeline} key={`Timeline-${timeline.id}`} />
+        ))}
     </Carousel>
   );
 }

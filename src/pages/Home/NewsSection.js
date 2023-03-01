@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useLayoutEffect } from "react";
 import { Button, Grid, Paper, Stack, Typography } from "@mui/material";
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 
@@ -11,8 +11,8 @@ function NewsSection(props) {
   const [get] = useData();
   const [news, setNews] = useState([]);
   const navigate = useNavigate();
-  
-  useEffect(() => {
+
+  useLayoutEffect(() => {
     (async () => {
       let { data } = await get("news");
       const sortedData = data.sort(
@@ -100,7 +100,7 @@ function NewsSection(props) {
               opacity: "0.9",
             },
           }}
-		  onClick={() => navigate('news')}
+          onClick={() => navigate("news")}
         >
           See more
         </Button>

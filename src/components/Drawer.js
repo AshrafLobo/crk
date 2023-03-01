@@ -62,6 +62,10 @@ function Drawer({ PAGES }) {
                   backgroundColor: "#0F75BD",
                 },
               }}
+              onClick={() =>
+                (window.location.href =
+                  "https://secure.comp-rite.co.ke/register/login")
+              }
             >
               AGM portal
             </ListItemButton>

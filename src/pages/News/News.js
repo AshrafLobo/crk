@@ -1,7 +1,13 @@
 import React from "react";
+import { NewsBanner, NewsSection } from "./";
 
 function News(props) {
-  return <div>News</div>;
+  return (
+    <>
+      <NewsBanner />
+      <NewsSection />
+    </>
+  );
 }
 
 export default News;

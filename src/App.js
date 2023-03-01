@@ -21,7 +21,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact_us" element={<ContactUs />} />
         <Route path="/payroll" element={<Payroll />} />
-		<Route path="/news" element={<News />} />
+        <Route path="/news" element={<News />} />
         <Route path="/share_registration" element={<ShareRegistration />} />
         <Route path="/issuer/:id" element={<Issuer />} />
       </Routes>

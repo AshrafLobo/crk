@@ -23,7 +23,7 @@ function NewsCard({
     >
       <Stack direction="row" justifyContent="space-between">
         <img
-          src={`http://localhost:5000/${src}`}
+          src={`${process.env.REACT_APP_API_URL}/${src}`}
           alt={`${issuerName} Logo Small`}
           aria-label={`${issuerName} Logo Small`}
           width="50px"

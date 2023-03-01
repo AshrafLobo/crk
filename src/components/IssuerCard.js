@@ -18,7 +18,7 @@ function IssuerCard({ issuer: { id, src, name, title } }) {
       }}
     >
       <img
-        src={`http://localhost:5000/${src}`}
+        src={`${process.env.REACT_APP_API_URL}/${src}`}
         alt={`${name} Logo`}
         aria-label={`${name} Logo`}
         width="85%"
@@ -35,7 +35,7 @@ function IssuerCard({ issuer: { id, src, name, title } }) {
             variant="subtitle1"
             sx={{
               fontWeight: "bold",
-              fontSize: { xs: "12px", sm: "1rem", md: "12px", lg: "1rem" },
+              fontSize: { xs: "12px", sm: "14px", md: "12px", lg: "14px" },
             }}
           >
             {name}
@@ -48,7 +48,7 @@ function IssuerCard({ issuer: { id, src, name, title } }) {
                 xs: "10px",
                 sm: "0.875rem",
                 md: "10px",
-                lg: "13px",
+                lg: "12px",
               },
               color: "#A0A0A0",
             }}
@@ -72,7 +72,7 @@ function IssuerCard({ issuer: { id, src, name, title } }) {
               opacity: "0.9",
             },
           }}
-          onClick={() => navigate(`issuer/${id}`)}
+          onClick={() => navigate(`/issuer/${id}`)}
         >
           View profile
         </Button>
