@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useLayoutEffect, useRef } from "react";
 
 import {
   ClientSection,
@@ -8,12 +8,19 @@ import {
 } from "./";
 
 function ShareRegistration(props) {
+  const formRef = useRef(null);
+  useLayoutEffect(() => window.scrollTo(0, 0), []);
+
+  const handleButtonClick = () => {
+    formRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <>
-      <ShareRegistrationBanner />
+      <ShareRegistrationBanner handleButtonClick={handleButtonClick} />
       <ClientSection />
       <ShareRegistrationFeatures />
-      <ShareRegistrationFormSection />
+      <ShareRegistrationFormSection ref={formRef} />
     </>
   );
 }

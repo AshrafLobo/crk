@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useLayoutEffect, useRef } from "react";
 
 import {
   PayrollBanner,
@@ -9,13 +9,20 @@ import {
 } from "./";
 
 function Payroll(props) {
+  const formRef = useRef(null);
+  useLayoutEffect(() => window.scrollTo(0, 0), []);
+
+  const handleButtonClick = () => {
+    formRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <>
-      <PayrollBanner />
+      <PayrollBanner handleButtonClick={handleButtonClick} />
       <PayrollServices />
       <Pay100Banner />
       <PayrollFeatures />
-      <PayrollFormSection />
+      <PayrollFormSection ref={formRef} />
     </>
   );
 }

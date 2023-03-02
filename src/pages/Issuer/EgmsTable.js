@@ -13,11 +13,11 @@ import {
 import dateformat from "dateformat";
 import { useParams } from "react-router-dom";
 
-import useData from "../../hooks/useData";
+import { useData } from "../../hooks";
 
 function EgmsTable(props) {
   const params = useParams();
-  const [get] = useData();
+  const { get } = useData();
 
   const [egms, setEgms] = useState([]);
   useLayoutEffect(() => {

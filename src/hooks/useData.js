@@ -23,6 +23,7 @@ function useData() {
       const response = await axios.post(url, payload, { headers: headers });
       return response;
     } catch (error) {
+      console.log("error", error);
       return error.response;
     }
   };
@@ -47,7 +48,7 @@ function useData() {
     }
   };
 
-  return [get, post, update, remove];
+  return { get, post, update, remove };
 }
 
 export default useData;

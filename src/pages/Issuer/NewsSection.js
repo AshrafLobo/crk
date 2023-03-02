@@ -3,11 +3,11 @@ import { Grid, Typography } from "@mui/material";
 import { useParams } from "react-router-dom";
 
 import { NewsCard } from "../../components";
-import useData from "../../hooks/useData";
+import { useData } from "../../hooks";
 
 function NewsSection(props) {
   const params = useParams();
-  const [get] = useData();
+  const { get } = useData();
   const [news, setNews] = useState([]);
 
   useLayoutEffect(() => {

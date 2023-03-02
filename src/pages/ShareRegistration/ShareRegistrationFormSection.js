@@ -4,9 +4,9 @@ import { Box, Grid, Stack, Typography } from "@mui/material";
 import { FaqSection } from "./";
 import { ShareRegistrationForm } from "../../components/forms";
 
-function ShareRegistrationFormSection(props) {
+function ShareRegistrationFormSection(props, ref) {
   return (
-    <Grid container sx={{ minHeight: "500px", width: "100%" }}>
+    <Grid container sx={{ minHeight: "500px", width: "100%" }} ref={ref}>
       <Grid
         item
         xs={12}
@@ -33,4 +33,4 @@ function ShareRegistrationFormSection(props) {
   );
 }
 
-export default ShareRegistrationFormSection;
+export default React.forwardRef(ShareRegistrationFormSection);

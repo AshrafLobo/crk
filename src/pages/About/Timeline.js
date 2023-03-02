@@ -7,7 +7,7 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 
 import { TimelineItem } from "./";
-import useData from "../../hooks/useData";
+import { useData } from "../../hooks";
 
 const responsive = {
   xl: {
@@ -33,7 +33,7 @@ const responsive = {
 };
 
 function Timeline(props) {
-  const [get] = useData();
+  const { get } = useData();
   const [timelines, setTimelines] = useState([]);
   useEffect(() => {
     (async () => {

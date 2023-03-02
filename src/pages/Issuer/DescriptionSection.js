@@ -13,14 +13,14 @@ import {
 } from "@mui/material";
 import { NavLink, useNavigate } from "react-router-dom";
 
-import useData from "../../hooks/useData";
+import { useData } from "../../hooks";
 
 function DescriptionSection({
   issuer: { name, srcSmall, title, description },
 }) {
   const navigate = useNavigate();
   const [issuers, setIssuers] = useState([]);
-  const [get] = useData();
+  const { get } = useData();
 
   useEffect(() => {
     (async () => {

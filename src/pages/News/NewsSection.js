@@ -2,10 +2,10 @@ import React, { useState, useLayoutEffect } from "react";
 import { Paper, Grid } from "@mui/material";
 
 import { NewsCard } from "../../components";
-import useData from "../../hooks/useData";
+import { useData } from "../../hooks";
 
 function NewsSection(props) {
-  const [get] = useData();
+  const { get } = useData();
   const [news, setNews] = useState([]);
 
   useLayoutEffect(() => {

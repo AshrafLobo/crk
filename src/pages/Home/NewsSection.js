@@ -5,10 +5,10 @@ import { useNavigate } from "react-router-dom";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 
 import { NewsCard } from "../../components";
-import useData from "../../hooks/useData";
+import { useData } from "../../hooks";
 
 function NewsSection(props) {
-  const [get] = useData();
+  const { get } = useData();
   const [news, setNews] = useState([]);
   const navigate = useNavigate();
 

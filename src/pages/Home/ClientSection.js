@@ -4,10 +4,10 @@ import { Button, Grid, Paper, Stack, Typography } from "@mui/material";
 
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import { IssuerCard } from "../../components";
-import useData from "../../hooks/useData";
+import { useData } from "../../hooks";
 
 function ClientSection(props) {
-  const [get] = useData();
+  const { get } = useData();
   const [issuers, setIssuers] = useState([]);
   const navigate = useNavigate();
 

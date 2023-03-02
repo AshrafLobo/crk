@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Stack, Grid, Typography } from "@mui/material";
 
 import { IssuerCard } from "../../components";
-import useData from "../../hooks/useData";
+import { useData } from "../../hooks";
 
 function ClientSection(props) {
-  const [get] = useData();
+  const { get } = useData();
   const [issuers, setIssuers] = useState([]);
 
   useEffect(() => {

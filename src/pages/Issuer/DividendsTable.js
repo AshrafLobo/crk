@@ -17,7 +17,7 @@ import useData from "../../hooks/useData";
 
 function DividendsTable(props) {
   const params = useParams();
-  const [get] = useData();
+  const { get } = useData();
 
   const [dividends, setDividends] = useState([]);
   useLayoutEffect(() => {

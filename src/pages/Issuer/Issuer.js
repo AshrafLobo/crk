@@ -6,7 +6,9 @@ import { DescriptionSection, TabsSection } from "./";
 import useData from "../../hooks/useData";
 
 function Issuer(props) {
-  const [get] = useData();
+  useLayoutEffect(() => window.scrollTo(0, 0), []);
+
+  const { get } = useData();
   const params = useParams();
   const [issuer, setIssuer] = useState({});
 

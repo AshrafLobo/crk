@@ -4,9 +4,9 @@ import { Box, Grid, Typography, Stack } from "@mui/material";
 import { PayrollForm } from "../../components";
 import { FaqSection } from "./";
 
-function PayrollFormSection(props) {
+function PayrollFormSection(props, ref) {
   return (
-    <Grid container sx={{ minHeight: "500px", width: "100%" }}>
+    <Grid container sx={{ minHeight: "500px", width: "100%" }} ref={ref}>
       <Grid
         item
         xs={12}
@@ -33,4 +33,4 @@ function PayrollFormSection(props) {
   );
 }
 
-export default PayrollFormSection;
+export default React.forwardRef(PayrollFormSection);

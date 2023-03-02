@@ -20,6 +20,7 @@ function Select(props) {
             select
             size="small"
             fullWidth
+            sx={{ textAlign: "left" }}
           >
             {options.map((option) => (
               <MenuItem key={option.value} value={option.value}>

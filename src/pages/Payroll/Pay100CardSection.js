@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Grid } from "@mui/material";
 
 import { Pay100Card } from "./";
@@ -8,20 +8,22 @@ import Full from "../../assets/customIcons/full.png";
 
 function Pay100CardSection(props) {
   return (
-    <Grid
-      container
-      display="flex"
-      justifyContent="center"
-      alignItems="center"
-      height="100%"
-    >
-      <Grid item xs={12} sm={5} md={6} lg={5} sx={{ my: { xs: 3, lg: 0 } }}>
-        <Pay100Card {...cards[0]} />
+    <>
+      <Grid
+        container
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        height="100%"
+      >
+        <Grid item xs={12} sm={5} md={6} lg={5} sx={{ my: { xs: 3, lg: 0 } }}>
+          <Pay100Card {...cards[0]} />
+        </Grid>
+        <Grid item xs={12} sm={5} md={6} lg={5} sx={{ my: { xs: 3, lg: 0 } }}>
+          <Pay100Card {...cards[1]} />
+        </Grid>
       </Grid>
-      <Grid item xs={12} sm={5} md={6} lg={5} sx={{ my: { xs: 3, lg: 0 } }}>
-        <Pay100Card {...cards[1]} />
-      </Grid>
-    </Grid>
+    </>
   );
 }
 

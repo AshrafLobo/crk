@@ -7,44 +7,17 @@ import "yup-phone-lite";
 import FormikControl from "./form-controls/FormikControl";
 import { useData, useSnackBar } from "../../hooks";
 
-function ShareRegistrationForm(props) {
+function PayrollDownloadForm(props) {
   const { post } = useData();
   const { displaySnackBar, setMessage } = useSnackBar();
-
-  const companyOptions = [
-    { key: "Athi River Mining", value: "athi river mining" },
-    { key: "Diamond Trust Bank Kenya", value: "diamond trust bank kenya" },
-    {
-      key: "Diamond Trust Bank Tanzania",
-      value: "diamond trust bank tanzania",
-    },
-    { key: "Housing Finance Group", value: "housing finance group" },
-    { key: "Total Kenya", value: "total kenya" },
-    { key: "Other", value: "other" },
-  ];
-
-  const serviceOptions = [
-    { key: "Account status", value: "account status" },
-    { key: "Ammendement of details", value: "ammendement of details" },
-    {
-      key: "Dividend payment",
-      value: "dividend payment",
-    },
-    { key: "General correspondence", value: "general correspondence" },
-    { key: "Other", value: "other" },
-  ];
 
   const initialValues = {
     firstName: "",
     lastName: "",
     email: "",
     phoneNo: "",
-    address: "",
-    idNumber: "",
     company: "",
-    cdscNumber: "",
-    service: "",
-    message: "",
+    noOfEmployees: "",
   };
 
   const validationSchema = Yup.object({
@@ -56,16 +29,14 @@ function ShareRegistrationForm(props) {
     phoneNo: Yup.string()
       .phone("KE", "Please enter a valid phone number")
       .required("A phone number is required"),
-    address: Yup.string(),
-    idNumber: Yup.string(),
-    company: Yup.string().required("Please select a company"),
-    cdscNumber: Yup.string(),
-    service: Yup.string().required("Please select a service"),
-    message: Yup.string().required("Please enter your message above"),
+    company: Yup.string().required("Please enter a company name"),
+    noOfEmployees: Yup.string().required(
+      "Please enter the number of employees in the company"
+    ),
   });
 
   const onSubmit = async (values, { resetForm }) => {
-    const { data } = await post("shareRegistrationForms", values);
+    const { data } = await post("payrollDownloadForms", values);
     resetForm();
     if (data && typeof data === "object") {
       setMessage("Message sent successfully");
@@ -125,26 +96,8 @@ function ShareRegistrationForm(props) {
                 <FormikControl
                   control="input"
                   type="text"
-                  label="Address"
-                  name="address"
-                />
-              </Grid>
-
-              <Grid item xs={12} md={6}>
-                <FormikControl
-                  control="input"
-                  type="text"
-                  label="ID Number"
-                  name="idNumber"
-                />
-              </Grid>
-
-              <Grid item xs={12} md={6}>
-                <FormikControl
-                  control="select"
-                  label="Pick a company"
+                  label="Company"
                   name="company"
-                  options={companyOptions}
                 />
               </Grid>
 
@@ -152,25 +105,8 @@ function ShareRegistrationForm(props) {
                 <FormikControl
                   control="input"
                   type="text"
-                  label="CDSC/Certificate  Number"
-                  name="cdscNumber"
-                />
-              </Grid>
-
-              <Grid item xs={12}>
-                <FormikControl
-                  control="select"
-                  label="Please select a service you would like to enquire about"
-                  name="service"
-                  options={serviceOptions}
-                />
-              </Grid>
-
-              <Grid item xs={12}>
-                <FormikControl
-                  control="textarea"
-                  label="Message"
-                  name="message"
+                  label="Number of employees"
+                  name="noOfEmployees"
                 />
               </Grid>
 
@@ -197,4 +133,4 @@ function ShareRegistrationForm(props) {
   );
 }
 
-export default ShareRegistrationForm;
+export default PayrollDownloadForm;
