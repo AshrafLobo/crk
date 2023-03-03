@@ -1,5 +1,6 @@
 import Payroll from "./Payroll";
 import PayrollBanner from "./PayrollBanner";
+import PayrollDownloadModal from "./PayrollDownloadModal";
 import PayrollServices from "./PayrollServices";
 import PayrollFeatures from "./PayrollFeatures";
 import PayrollFormSection from "./PayrollFormSection";
@@ -11,6 +12,7 @@ import FaqSection from "./FaqSection";
 export {
   Payroll,
   PayrollBanner,
+  PayrollDownloadModal,
   PayrollServices,
   Pay100Banner,
   Pay100Card,

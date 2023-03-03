@@ -7,8 +7,8 @@ import "yup-phone-lite";
 import FormikControl from "./form-controls/FormikControl";
 import { useData, useSnackBar } from "../../hooks";
 
-function PayrollDownloadForm(props) {
-  const { post } = useData();
+function PayrollDownloadForm({ handleClose }) {
+  const { get, post } = useData();
   const { displaySnackBar, setMessage } = useSnackBar();
 
   const initialValues = {
@@ -39,10 +39,17 @@ function PayrollDownloadForm(props) {
     const { data } = await post("payrollDownloadForms", values);
     resetForm();
     if (data && typeof data === "object") {
-      setMessage("Message sent successfully");
+      setMessage("Message sent successfully. Your download will begin shortly");
     } else {
       setMessage("Message not sent. Somthing went wrong", "error");
     }
+    setTimeout(() => {
+      handleClose();
+      window.open(
+        `${process.env.REACT_APP_API_URL}/download/Setup.exe`,
+        "_blank"
+      );
+    }, 6000);
   };
 
   return (
@@ -121,7 +128,7 @@ function PayrollDownloadForm(props) {
                     fontSize: "12px",
                   }}
                 >
-                  Submit
+                  Submit and download
                 </Button>
               </Stack>
             </Grid>

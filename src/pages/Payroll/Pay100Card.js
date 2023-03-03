@@ -3,7 +3,7 @@ import { Box, Button, Card, Divider, Stack, Typography } from "@mui/material";
 
 import CheckIcon from "@mui/icons-material/Check";
 
-function Pay100Card({ image, imageAlt, version, price, features }) {
+function Pay100Card({ image, imageAlt, version, price, features, handleOpen }) {
   return (
     <Card
       elevation={2}
@@ -62,6 +62,7 @@ function Pay100Card({ image, imageAlt, version, price, features }) {
         <Button
           variant="contained"
           sx={{ bgcolor: "#DDA01E", borderRadius: "50px", fontSize: "12px" }}
+          onClick={handleOpen}
         >
           REQUEST A DEMO
         </Button>
