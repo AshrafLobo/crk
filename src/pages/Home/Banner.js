@@ -102,7 +102,7 @@ function Banner(props) {
       container
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
-      sx={{ minHeight: "600px" }}
+      sx={{ height: { xs: "auto", md: "600px" } }}
     >
       <Grid
         item
@@ -113,6 +113,7 @@ function Banner(props) {
         md={6}
         bgcolor="#0F75BD"
         sx={{
+          height: { xs: "auto", md: "100%" },
           py: { xs: 5, lg: 0 },
         }}
         order={{ xs: 2, md: 1 }}
@@ -183,14 +184,20 @@ function Banner(props) {
         xs={12}
         md={6}
         sx={{
-          py: { xs: 5, md: 0 },
+          height: { xs: "auto", md: "100%" },
+          p: { xs: 0, md: 5 },
         }}
         order={{ xs: 1, md: 2 }}
       >
         <img
           src={image}
           alt={imageAlt}
-          style={{ maxWidth: "600px", width: "100%" }}
+          style={{
+            height: "100%",
+            width: "100%",
+            objectFit: "cover",
+            boxShadow: "5px 5px 10px 1px rgba(43,43,43,0.7)",
+          }}
         />
       </Grid>
     </Grid>

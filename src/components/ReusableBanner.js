@@ -11,7 +11,7 @@ function ReusableBanner({
   handleButtonClick,
 }) {
   return (
-    <Grid container sx={{ minHeight: "550px" }}>
+    <Grid container sx={{ height: { xs: "auto", md: "550px" } }}>
       <Grid
         item
         display="flex"
@@ -20,13 +20,19 @@ function ReusableBanner({
         xs={12}
         md={6}
         sx={{
-          py: { xs: 5, md: 0 },
+          height: { xs: "auto", md: "100%" },
+          p: { xs: 0, md: 5 },
         }}
       >
         <img
           src={image}
           alt={altImage}
-          style={{ maxWidth: "600px", width: "100%" }}
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            boxShadow: "5px 5px 10px 1px rgba(43,43,43,0.7)",
+          }}
         />
       </Grid>
       <Grid
@@ -38,7 +44,7 @@ function ReusableBanner({
         md={6}
         bgcolor="#0F75BD"
         sx={{
-          minHeight: "400px",
+          height: { xs: "auto", md: "100%" },
           py: { xs: 5, lg: 0 },
           borderRadius: { xs: "0px", md: "0px 0px 0px 50px" },
         }}

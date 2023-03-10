@@ -44,33 +44,6 @@ function ServiceCard({
           height: "fit-content",
         }}
       >
-        <img
-          src={CardBackground1}
-          alt="Card Background 1"
-          style={{
-            width: "40px",
-            height: "fit-content",
-            position: "absolute",
-            objectFit: "contain",
-            top: 10,
-            right: 10,
-            opacity: "0.75",
-          }}
-        />
-
-        <img
-          src={CardBackground2}
-          alt="Card Background 2"
-          style={{
-            width: "50px",
-            height: "fit-content",
-            position: "absolute",
-            objectFit: "contain",
-            bottom: 10,
-            left: 10,
-            opacity: "0.75",
-          }}
-        />
         <Stack
           spacing={1}
           sx={{

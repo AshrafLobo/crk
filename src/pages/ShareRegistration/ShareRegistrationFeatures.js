@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Stack, Typography } from "@mui/material";
+import { Box, Grid, Stack, Typography } from "@mui/material";
 
 import AGM from "../../assets/customIcons/agm.png";
 import DataSecurity from "../../assets/customIcons/data-security.png";
@@ -11,7 +11,7 @@ import { ColoredBox } from "../../components";
 
 function ShareRegistrationFeatures(props) {
   return (
-    <Grid container sx={{ my: 5 }}>
+    <Box sx={{ my: 5 }}>
       <Stack
         spacing={1}
         sx={{
@@ -44,7 +44,12 @@ function ShareRegistrationFeatures(props) {
         <Typography
           variant="body1"
           component="p"
-          sx={{ maxWidth: "600px", color: "#A0A0A0", p: 0 }}
+          sx={{
+            maxWidth: "600px",
+            mx: "auto !important",
+            color: "#A0A0A0",
+            p: 0,
+          }}
         >
           Comp-rite Kenya Ltd handles the following share registration services
           on behalf of our issuers. Please fill in the contact form below to
@@ -59,7 +64,7 @@ function ShareRegistrationFeatures(props) {
           </Grid>
         ))}
       </Grid>
-    </Grid>
+    </Box>
   );
 }
 
