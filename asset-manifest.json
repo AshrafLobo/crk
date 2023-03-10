@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/crk/static/css/main.4827e652.css",
-    "main.js": "/crk/static/js/main.3efe4b59.js",
-    "static/media/services_image1.png": "/crk/static/media/services_image1.3a55ced9a69e37b90636.png",
-    "static/media/services_image2.png": "/crk/static/media/services_image2.e9498fc528fa04793755.png",
-    "static/media/background-4.png": "/crk/static/media/background-4.f0f80b9089b29afa2a1e.png",
-    "static/media/background-2.png": "/crk/static/media/background-2.ccace9d28715bdfbd42e.png",
-    "static/media/background-3.png": "/crk/static/media/background-3.ff680eccf29ad9a819a0.png",
-    "static/media/background-1.png": "/crk/static/media/background-1.e5bcfb01b544c8595939.png",
-    "static/media/background-6.png": "/crk/static/media/background-6.db4aeb9e8cee3d61bb68.png",
-    "static/media/background-5.png": "/crk/static/media/background-5.a04449168def75843171.png",
+    "main.js": "/crk/static/js/main.2a8a7d30.js",
+    "static/media/services_image1.png": "/crk/static/media/services_image1.0a991fa5a31100879052.png",
+    "static/media/services_image2.png": "/crk/static/media/services_image2.3a82a8afb1b0f1e9aa0b.png",
+    "static/media/background-2.png": "/crk/static/media/background-2.afec23174de3eaa6a040.png",
+    "static/media/background-4.png": "/crk/static/media/background-4.ef5a6a4fe90adeba2206.png",
+    "static/media/background-3.png": "/crk/static/media/background-3.6001a5bf31a072683bac.png",
+    "static/media/background-1.png": "/crk/static/media/background-1.b643e10a052b93e0b214.png",
+    "static/media/background-6.png": "/crk/static/media/background-6.88f4edbc53981548d263.png",
+    "static/media/background-5.png": "/crk/static/media/background-5.7f20941a954aecb4c4ed.png",
     "static/media/instagram.png": "/crk/static/media/instagram.e000f02df2a117428bdf.png",
     "static/media/share-maintainance.png": "/crk/static/media/share-maintainance.2dfe552e5d296109f3ff.png",
     "static/media/accurate.png": "/crk/static/media/accurate.2b291ad403843652379a.png",
@@ -26,10 +26,10 @@
     "static/media/revicons.woff": "/crk/static/media/revicons.e8746a624ed098489406.woff",
     "index.html": "/crk/index.html",
     "main.4827e652.css.map": "/crk/static/css/main.4827e652.css.map",
-    "main.3efe4b59.js.map": "/crk/static/js/main.3efe4b59.js.map"
+    "main.2a8a7d30.js.map": "/crk/static/js/main.2a8a7d30.js.map"
   },
   "entrypoints": [
     "static/css/main.4827e652.css",
-    "static/js/main.3efe4b59.js"
+    "static/js/main.2a8a7d30.js"
   ]
 }
