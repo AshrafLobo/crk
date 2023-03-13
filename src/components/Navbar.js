@@ -9,12 +9,13 @@ import {
   useTheme,
   useMediaQuery,
 } from "@mui/material";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 import Drawer from "./Drawer";
 import Logo from "../assets/logo.png";
 
 function Navbar(props) {
+  const navigate = useNavigate();
   const theme = useTheme();
   const isMatch = useMediaQuery(theme.breakpoints.down("lg"));
 
@@ -25,7 +26,12 @@ function Navbar(props) {
       sx={{ bgcolor: "white", color: "#0A0A0A" }}
     >
       <Toolbar>
-        <IconButton size="large" color="inherit" disableRipple>
+        <IconButton
+          size="large"
+          color="inherit"
+          disableRipple
+          onClick={() => navigate("/")}
+        >
           <img
             src={Logo}
             alt="Logo"

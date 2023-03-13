@@ -1,10 +1,20 @@
 import React from "react";
 import dateformat from "dateformat";
-import { Button, Box, Card, Divider, Stack, Typography } from "@mui/material";
+import {
+  Button,
+  Box,
+  Card,
+  IconButton,
+  Divider,
+  Stack,
+  Typography,
+} from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 function NewsCard({
-  news: { issuerName, src, title, article, dateUpdated, originalSrc },
+  news: { issuerId, issuerName, src, title, article, dateUpdated, originalSrc },
 }) {
+  const navigate = useNavigate();
   const date = new Date(dateUpdated);
   const mediumDate = dateformat(date, "mediumDate");
   const shortTime = dateformat(date, "shortTime");
@@ -22,15 +32,21 @@ function NewsCard({
       }}
     >
       <Stack direction="row" justifyContent="space-between">
-        <img
-          src={`${process.env.REACT_APP_API_URL}/${src}`}
-          alt={`${issuerName} Logo Small`}
-          aria-label={`${issuerName} Logo Small`}
-          width="50px"
-          height="50px"
-          style={{ objectFit: "contain" }}
-        />
-
+        <IconButton
+          size="large"
+          color="inherit"
+          disableRipple
+          onClick={() => navigate(`/issuer/${issuerId}`)}
+        >
+          <img
+            src={`${process.env.REACT_APP_API_URL}/${src}`}
+            alt={`${issuerName} Logo Small`}
+            aria-label={`${issuerName} Logo Small`}
+            width="50px"
+            height="50px"
+            style={{ objectFit: "contain" }}
+          />
+        </IconButton>
         <Stack spacing={0} sx={{ textAlign: "right" }}>
           <Typography
             variant="subtitle1"
@@ -85,6 +101,7 @@ function NewsCard({
         <Typography
           variant="body2"
           component="p"
+          onClick={() => navigate(`/issuer/${issuerId}`)}
           sx={{
             fontWeight: "400",
             fontSize: {
@@ -93,7 +110,11 @@ function NewsCard({
               md: "10px",
               lg: "13px",
             },
+            cursor: "pointer",
             color: "#A0A0A0",
+            "&:hover": {
+              color: "#DDA01E",
+            },
           }}
         >
           {issuerName}
