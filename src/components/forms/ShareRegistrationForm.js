@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Grid, Stack, Button } from "@mui/material";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import "yup-phone-lite";
+import ReCAPTCHA from "react-google-recaptcha";
 
 import FormikControl from "./form-controls/FormikControl";
 import { useData, useSnackBar } from "../../hooks";
 
 function ShareRegistrationForm(props) {
+  const [verified, setVerified] = useState(false);
   const { post } = useData();
   const { displaySnackBar, setMessage } = useSnackBar();
 
@@ -19,7 +21,7 @@ function ShareRegistrationForm(props) {
       value: "diamond trust bank tanzania",
     },
     { key: "Housing Finance Group", value: "housing finance group" },
-    { key: "Total Kenya", value: "total kenya" },
+    { key: "Total Energies Kenya", value: "total energies kenya" },
     { key: "Other", value: "other" },
   ];
 
@@ -174,11 +176,18 @@ function ShareRegistrationForm(props) {
                 />
               </Grid>
 
+              <Grid item xs={12}>
+                <ReCAPTCHA
+                  sitekey={process.env.REACT_APP_API_RECAPTCHA_SITE_KEY}
+                  onChange={() => setVerified(true)}
+                />
+              </Grid>
+
               <Stack direction="row" justifyContent="flex-end" sx={{ m: 2 }}>
                 <Button
                   type="submit"
                   variant="contained"
-                  disabled={!formik.isValid}
+                  disabled={!formik.isValid || !verified}
                   sx={{
                     width: "200px",
                     borderRadius: "50px",
