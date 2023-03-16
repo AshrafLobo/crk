@@ -37,6 +37,7 @@ function NewsCard({
           color="inherit"
           disableRipple
           onClick={() => navigate(`/issuer/${issuerId}`)}
+          sx={{ p: 0 }}
         >
           <img
             src={`${process.env.REACT_APP_API_URL}/${src}`}

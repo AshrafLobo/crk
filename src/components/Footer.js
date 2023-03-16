@@ -1,5 +1,12 @@
 import React from "react";
-import { Grid, Stack, Typography, Container, Divider } from "@mui/material";
+import {
+  IconButton,
+  Grid,
+  Stack,
+  Typography,
+  Container,
+  Divider,
+} from "@mui/material";
 import dateformat from "dateformat";
 
 import PlaceIcon from "@mui/icons-material/Place";
@@ -54,30 +61,75 @@ function Footer(props) {
           <Typography variant="h6">Follow us</Typography>
 
           <Stack direction="row" spacing={1}>
-            <img
-              src={Facebook}
-              alt="Facebook"
-              aria-label="Facebook"
-              width="40px"
-            />
-            <img
-              src={Twitter}
-              alt="Twitter"
-              aria-label="Twitter"
-              width="40px"
-            />
-            <img
-              src={Linkedin}
-              alt="Linkedin"
-              aria-label="Linkedin"
-              width="40px"
-            />
-            <img
-              src={Instagram}
-              alt="Instagram"
-              aria-label="Instagram"
-              width="40px"
-            />
+            <IconButton
+              size="large"
+              color="inherit"
+              disableRipple
+              onClick={() =>
+                (window.location.href =
+                  "https://www.facebook.com/CompriteKenya")
+              }
+              sx={{ p: 0 }}
+            >
+              <img
+                src={Facebook}
+                alt="Facebook"
+                aria-label="Facebook"
+                width="40px"
+              />
+            </IconButton>
+
+            <IconButton
+              size="large"
+              color="inherit"
+              disableRipple
+              onClick={() =>
+                (window.location.href = "https://twitter.com/CompriteKenya")
+              }
+              sx={{ p: 0 }}
+            >
+              <img
+                src={Twitter}
+                alt="Twitter"
+                aria-label="Twitter"
+                width="40px"
+              />
+            </IconButton>
+
+            <IconButton
+              size="large"
+              color="inherit"
+              disableRipple
+              onClick={() =>
+                (window.location.href =
+                  "https://www.linkedin.com/company/comprite-kenya-limited/")
+              }
+              sx={{ p: 0 }}
+            >
+              <img
+                src={Linkedin}
+                alt="Linkedin"
+                aria-label="Linkedin"
+                width="40px"
+              />
+            </IconButton>
+
+            <IconButton
+              size="large"
+              color="inherit"
+              disableRipple
+              onClick={() =>
+                (window.location.href = "https://www.instagram.com/compriteke/")
+              }
+              sx={{ p: 0 }}
+            >
+              <img
+                src={Instagram}
+                alt="Instagram"
+                aria-label="Instagram"
+                width="40px"
+              />
+            </IconButton>
           </Stack>
         </Grid>
         <Grid item md={3} xs={12} sx={{ paddingLeft: 2 }}>
