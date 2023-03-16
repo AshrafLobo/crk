@@ -4,14 +4,14 @@ import { useNavigate } from "react-router-dom";
 
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 
+import { FeaturedPostsSection } from "./";
 import { NewsCard } from "../../components";
 import { useData } from "../../hooks";
 
 function NewsSection(props) {
+  const navigate = useNavigate();
   const { get } = useData();
   const [news, setNews] = useState([]);
-  const navigate = useNavigate();
-
   useLayoutEffect(() => {
     (async () => {
       let { data } = await get("news");
@@ -65,6 +65,8 @@ function NewsSection(props) {
             See the latest news and information from our clients
           </Typography>
         </Stack>
+
+        <FeaturedPostsSection />
 
         <Grid
           container

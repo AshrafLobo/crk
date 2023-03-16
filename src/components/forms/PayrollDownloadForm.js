@@ -48,7 +48,7 @@ function PayrollDownloadForm({ handleClose }) {
     setTimeout(() => {
       handleClose();
       window.open(
-        `${process.env.REACT_APP_API_URL}/download/Setup.exe`,
+        `${process.env.REACT_APP_API_URL}/downloads/Setup.exe`,
         "_blank"
       );
     }, 6000);
