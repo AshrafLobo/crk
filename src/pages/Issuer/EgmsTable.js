@@ -25,7 +25,10 @@ function EgmsTable(props) {
       if (params.id) {
         const { data } = await get(`issuers/egms/${params.id}`);
         if (data && Array.isArray(data) && data.length > 0) {
-          setEgms(data);
+		  const sortedData = data.sort(
+			(a, b) => new Date(b.egmDate) - new Date(a.egmDate)
+		  );	
+          setEgms(sortedData);
         } else {
           setEgms([]);
         }
@@ -65,11 +68,11 @@ function EgmsTable(props) {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell>
-                    {dateformat(new Date(egm.agmDate), "mm/dd/yyyy h:MM TT")}
+                    {dateformat(new Date(egm.egmDate), "mm/dd/yyyy h:MM TT")}
                   </TableCell>
                   <TableCell>{egm.title}</TableCell>
                   <TableCell>
-                    {dateformat(new Date(egm.agmDate), "yyyy")}
+                    {dateformat(new Date(egm.egmDate), "yyyy")}
                   </TableCell>
                   <TableCell>{egm.venue}</TableCell>
                   <TableCell>

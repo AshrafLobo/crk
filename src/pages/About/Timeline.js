@@ -101,47 +101,4 @@ function LeftArrow({ onClick, ...rest }) {
   );
 }
 
-/* const TIMELINES = [
-  {
-    index: 1,
-    year: "1972",
-    title: "Inception",
-    timelineText:
-      "Comp-rite Kenya Limited began in 1972 by providing software solutions to growing market",
-  },
-  {
-    index: 2,
-    year: "1972",
-    title: "Data Processing Bureau",
-    timelineText:
-      "Developed Data Processing Bureau: Share Registration and Payroll",
-  },
-  {
-    index: 3,
-    year: "1978",
-    title: "Began sales of mini-computers",
-    timelineText: "We commenced sales of Kenya's first mini-computer",
-  },
-  {
-    index: 4,
-    year: "1978",
-    title: "Introduced Apple Computers to Africa",
-    timelineText:
-      "We introduced Apple Computers to Africa as well as started new services for micro, mini and mainframe computers",
-  },
-  {
-    index: 5,
-    year: "1984",
-    title: "Launching Apple Macintosh Computers",
-    timelineText: "Launched Apple Macintosh Personal Computers",
-  },
-  {
-    index: 6,
-    year: "1986",
-    title: "Successfully processed IPO",
-    timelineText:
-      "Successfully processed the IPO for the FIRST listed company in Kenya.",
-  },
-]; */
-
 export default Timeline;

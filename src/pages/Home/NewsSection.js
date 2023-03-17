@@ -16,7 +16,7 @@ function NewsSection(props) {
     (async () => {
       let { data } = await get("news");
       const sortedData = data.sort(
-        (a, b) => new Date(b.dateUpdated) - new Date(a.dateUpdated)
+        (a, b) => new Date(b.originalpostDate) - new Date(a.originalpostDate)
       );
       setNews(sortedData.slice(0, 3));
     })();

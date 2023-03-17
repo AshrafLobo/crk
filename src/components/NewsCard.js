@@ -12,10 +12,10 @@ import {
 import { useNavigate } from "react-router-dom";
 
 function NewsCard({
-  news: { issuerId, issuerName, src, title, article, dateUpdated, originalSrc },
+  news: { issuerId, issuerName, src, title, article, originalpostDate, originalSrc },
 }) {
   const navigate = useNavigate();
-  const date = new Date(dateUpdated);
+  const date = new Date(originalpostDate);
   const mediumDate = dateformat(date, "mediumDate");
   const shortTime = dateformat(date, "shortTime");
 
