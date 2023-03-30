@@ -25,9 +25,9 @@ function DividendsTable(props) {
       if (params.id) {
         const { data } = await get(`issuers/dividends/${params.id}`);
         if (data && Array.isArray(data) && data.length > 0) {
-		  const sortedData = data.sort(
-			(a, b) => new Date(b.bookClosureDate) - new Date(a.bookClosureDate)
-		  );	
+          const sortedData = data.sort(
+            (a, b) => new Date(b.bookClosureDate) - new Date(a.bookClosureDate)
+          );
           setDividends(sortedData);
         } else {
           setDividends([]);

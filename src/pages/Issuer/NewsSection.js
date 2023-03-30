@@ -16,9 +16,10 @@ function NewsSection(props) {
         let { data } = await get(`issuers/news/${params.id}`);
 
         if (data && Array.isArray(data) && data.length > 0) {
-		  const sortedData = data.sort(
-			(a, b) => new Date(b.originalpostDate) - new Date(a.originalpostDate)
-		  );
+          const sortedData = data.sort(
+            (a, b) =>
+              new Date(b.originalpostDate) - new Date(a.originalpostDate)
+          );
           setNews(sortedData);
         } else {
           setNews([]);

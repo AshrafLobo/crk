@@ -11,7 +11,7 @@ function NewsSection(props) {
   useLayoutEffect(() => {
     (async () => {
       let { data } = await get("news");
-	  const sortedData = data.sort(
+      const sortedData = data.sort(
         (a, b) => new Date(b.originalpostDate) - new Date(a.originalpostDate)
       );
       setNews(sortedData);

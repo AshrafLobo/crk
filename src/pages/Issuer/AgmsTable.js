@@ -26,9 +26,9 @@ function AgmsTable(props) {
         const { data } = await get(`issuers/agms/${params.id}`);
 
         if (data && Array.isArray(data) && data.length > 0) {
-		  const sortedData = data.sort(
-			(a, b) => new Date(b.agmDate) - new Date(a.agmDate)
-		  );
+          const sortedData = data.sort(
+            (a, b) => new Date(b.agmDate) - new Date(a.agmDate)
+          );
           setAgms(sortedData);
         } else {
           setAgms([]);

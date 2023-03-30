@@ -16,7 +16,7 @@ import {
 
 const theme = createTheme({
   typography: {
-    fontFamily: "'Open Sans', sans-serif",
+    fontFamily: "'Roboto', 'Tahoma', 'Arial', sans-serif",
   },
 });
 

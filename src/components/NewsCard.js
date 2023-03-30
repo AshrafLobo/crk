@@ -12,7 +12,15 @@ import {
 import { useNavigate } from "react-router-dom";
 
 function NewsCard({
-  news: { issuerId, issuerName, src, title, article, originalpostDate, originalSrc },
+  news: {
+    issuerId,
+    issuerName,
+    src,
+    title,
+    article,
+    originalpostDate,
+    originalSrc,
+  },
 }) {
   const navigate = useNavigate();
   const date = new Date(originalpostDate);

@@ -25,9 +25,9 @@ function EgmsTable(props) {
       if (params.id) {
         const { data } = await get(`issuers/egms/${params.id}`);
         if (data && Array.isArray(data) && data.length > 0) {
-		  const sortedData = data.sort(
-			(a, b) => new Date(b.egmDate) - new Date(a.egmDate)
-		  );	
+          const sortedData = data.sort(
+            (a, b) => new Date(b.egmDate) - new Date(a.egmDate)
+          );
           setEgms(sortedData);
         } else {
           setEgms([]);
