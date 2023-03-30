@@ -19,7 +19,7 @@ function Payroll(props) {
   return (
     <>
       <PayrollBanner handleButtonClick={handleButtonClick} />
-      <PayrollServices />
+      <PayrollServices handleButtonClick={handleButtonClick} />
       <Pay100Banner />
       <PayrollFeatures />
       <PayrollFormSection ref={formRef} />

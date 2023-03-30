@@ -30,7 +30,7 @@ function Banner(props) {
       solutions to a diverse range of corporations in Kenya.`,
       image: Background1,
       imageAlt: "Comp-rite Office",
-      buttonText: "Send us a message",
+      buttonText: "Contact us",
       buttonAction: function () {
         navigate("contact_us");
       },
@@ -134,7 +134,7 @@ function Banner(props) {
             variant="contained"
             endIcon={<ArrowRightIcon />}
             sx={{
-              width: "200px",
+              width: "fit-content",
               mx: { xs: "auto !important", md: "0 !important" },
               py: "10px",
               borderRadius: "50px",
