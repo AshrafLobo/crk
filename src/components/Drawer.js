@@ -39,7 +39,7 @@ function Drawer({ PAGES }) {
           </IconButton>
         </Stack>
 
-        <List>
+        <List sx={{ fontFamily: "Roboto, Arial, sans-serif" }}>
           {PAGES.map((page, index) => (
             <ListItemButton
               onClick={() => handleListItemClick(page.link, index)}

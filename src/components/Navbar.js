@@ -40,7 +40,11 @@ function Navbar(props) {
             aria-label="Comp-rite Logo"
           />
         </IconButton>
-        <Typography variant="button" component="div" sx={{ flexGrow: 1 }}>
+        <Typography
+          variant="button"
+          component="div"
+          sx={{ flexGrow: 1, fontWeight: "bold" }}
+        >
           Comp-rite Kenya
         </Typography>
 
@@ -59,6 +63,7 @@ function Navbar(props) {
                     textDecoration: "none",
                     fontSize: "0.875rem",
                     fontWeight: 600,
+                    fontFamily: "Roboto, Arial, sans-serif",
                     lineHeight: "1.25",
                     letterSpacing: "0.02857em",
                     color: "#757575",

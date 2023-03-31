@@ -1,5 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import { createTheme, ThemeProvider } from "@mui/material";
+import "@fontsource/roboto";
 import "./App.scss";
 
 import { Footer, Navbar } from "./components";
@@ -13,9 +15,15 @@ import {
   Issuer,
 } from "./pages";
 
+const theme = createTheme({
+  typography: {
+    fontFamily: "Roboto, Arial, sans-serif",
+  },
+});
+
 function App() {
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -27,7 +35,7 @@ function App() {
         <Route path="/issuer/:id" element={<Issuer />} />
       </Routes>
       <Footer />
-    </>
+    </ThemeProvider>
   );
 }
 
