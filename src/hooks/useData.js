@@ -5,13 +5,15 @@ function useData() {
 
   const get = async (route, headers = {}, responseType = "json") => {
     try {
-      const url = `${URL}/${route}`;
-      const response = await axios.get(url, {
-        responseType: responseType,
-        headers: headers,
-      });
+      if (route) {
+        const url = `${URL}/${route}`;
+        const response = await axios.get(url, {
+          responseType: responseType,
+          headers: headers,
+        });
 
-      return response;
+        return response;
+      }
     } catch (error) {
       return error.response;
     }
@@ -19,9 +21,11 @@ function useData() {
 
   const post = async (route, payload, headers = {}) => {
     try {
-      const url = `${URL}/${route}`;
-      const response = await axios.post(url, payload, { headers: headers });
-      return response;
+      if (route) {
+        const url = `${URL}/${route}`;
+        const response = await axios.post(url, payload, { headers: headers });
+        return response;
+      }
     } catch (error) {
       console.log("error", error);
       return error.response;
@@ -30,9 +34,11 @@ function useData() {
 
   const update = async (route, payload, headers = {}) => {
     try {
-      const url = `${URL}/${route}`;
-      const response = await axios.put(url, payload, { headers: headers });
-      return response;
+      if (route) {
+        const url = `${URL}/${route}`;
+        const response = await axios.put(url, payload, { headers: headers });
+        return response;
+      }
     } catch (error) {
       return error.response;
     }
@@ -40,9 +46,11 @@ function useData() {
 
   const remove = async (route, headers = {}) => {
     try {
-      const url = `${URL}/${route}`;
-      const response = await axios.delete(url, { headers: headers });
-      return response;
+      if (route) {
+        const url = `${URL}/${route}`;
+        const response = await axios.delete(url, { headers: headers });
+        return response;
+      }
     } catch (error) {
       return error.response;
     }

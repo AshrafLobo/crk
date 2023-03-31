@@ -16,7 +16,7 @@ function AboutBanner(props) {
   technology-focused, and over the years, Comp-rite remains at the
   forefront of providing customized software and technology-based
   solutions to a diverse range of corporations in Kenya.`,
-    buttonText: "Send us a message",
+    buttonText: "Contact us",
     handleButtonClick: function handleClick() {
       navigate("/contact_us");
     },

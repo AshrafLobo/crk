@@ -25,7 +25,7 @@ const faqs = [
     id: "panel1-header",
     contentId: "panel1-content",
     panelId: "panel1",
-    question: "What is dividned?",
+    question: "What is dividend?",
     answer: `A dividend is a share of profits and retained earnings that a company pays out to its
               shareholders. When a company generates a profit and accumulates retained earnings,
               those earnings can be either reinvested in the business or paid out to shareholders as
