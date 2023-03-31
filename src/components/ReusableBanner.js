@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Grid, Stack, Typography } from "@mui/material";
+import { Box, Button, Divider, Grid, Stack, Typography } from "@mui/material";
 
 function ReusableBanner({
   image,
