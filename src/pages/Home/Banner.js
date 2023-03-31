@@ -1,5 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Button, Grid, IconButton, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Divider,
+  Grid,
+  IconButton,
+  Stack,
+  Typography,
+} from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
@@ -83,19 +91,19 @@ function Banner(props) {
     slides[currentSlide];
   const no_of_slides = slides.length;
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (!isPaused) {
-        if (currentSlide === no_of_slides - 1) {
-          setCurrentSlide(0);
-        } else {
-          setCurrentSlide(currentSlide + 1);
-        }
-      }
-    }, 5000);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     if (!isPaused) {
+  //       if (currentSlide === no_of_slides - 1) {
+  //         setCurrentSlide(0);
+  //       } else {
+  //         setCurrentSlide(currentSlide + 1);
+  //       }
+  //     }
+  //   }, 5000);
 
-    return () => clearInterval(interval);
-  }, [currentSlide, no_of_slides, isPaused]);
+  //   return () => clearInterval(interval);
+  // }, [currentSlide, no_of_slides, isPaused]);
 
   return (
     <Grid
@@ -114,7 +122,7 @@ function Banner(props) {
         bgcolor="#0F75BD"
         sx={{
           height: { xs: "auto", md: "100%" },
-          py: { xs: 5, lg: 0 },
+          py: { xs: 5, sm: 10, lg: 0 },
         }}
         order={{ xs: 2, md: 1 }}
       >
@@ -186,6 +194,7 @@ function Banner(props) {
         sx={{
           height: { xs: "auto", md: "100%" },
           p: { xs: 0, md: 5 },
+          position: "relative",
         }}
         order={{ xs: 1, md: 2 }}
       >
@@ -199,6 +208,50 @@ function Banner(props) {
             boxShadow: "5px 5px 10px 1px rgba(43,43,43,0.7)",
           }}
         />
+
+        {currentSlide === 0 ? (
+          <Box
+            sx={{
+              width: "100%",
+              height: "100%",
+              position: "absolute",
+              zIndex: 10,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Stack sx={{ mx: 10 }}>
+              <Typography
+                variant="body1"
+                sx={{
+                  color: "#FFFFFF",
+                  fontFamily: "Lato, Arial, sans-serif",
+                  fontWeight: "400",
+                  fontSize: { xs: "12px", sm: "14px" },
+                  letterSpacing: { xs: "4px", sm: "8px" },
+                  textAlign: "right",
+                }}
+              >
+                ESTABLISHED 1972
+              </Typography>
+              <Divider sx={{ mt: 1, border: "#FFFFFF solid 1.5px" }} />
+              <Typography
+                sx={{
+                  color: "#FFFFFF",
+                  fontFamily: "Lato, Arial, sans-serif",
+                  fontWeight: "600",
+                  fontSize: { xs: "24px", sm: "28px" },
+                  my: 5,
+                }}
+              >
+                KENYA'S LEADER AND PIONEER IN DATA BUREAU & SOFTWARE SOLUTIONS
+              </Typography>
+              <Divider sx={{ border: "#FFFFFF solid 1.5px" }} />
+              <Divider sx={{ mt: 1, border: "#FFFFFF solid 1.5px" }} />
+            </Stack>
+          </Box>
+        ) : null}
       </Grid>
     </Grid>
   );

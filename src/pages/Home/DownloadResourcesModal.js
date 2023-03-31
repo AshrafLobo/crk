@@ -18,7 +18,6 @@ function DownloadResourcesModal({ postId, open, handleClose }) {
   const [resources, setResources] = useState([]);
   useLayoutEffect(() => {
     (async () => {
-      console.log(postId);
       if (postId) {
         const { data } = await get(`featuredDownloads/resources/${postId}`);
         setResources(data);

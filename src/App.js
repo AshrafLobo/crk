@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material";
 import "@fontsource/roboto";
+import "@fontsource/lato";
 import "./App.scss";
 
 import { Footer, Navbar } from "./components";
