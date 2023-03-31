@@ -43,7 +43,7 @@ function Navbar(props) {
         <Typography
           variant="button"
           component="div"
-          sx={{ flexGrow: 1, fontWeight: "bold" }}
+          sx={{ flexGrow: 1, color: "#0A0A0A", fontWeight: "bold" }}
         >
           Comp-rite Kenya
         </Typography>

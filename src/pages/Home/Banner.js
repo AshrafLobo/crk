@@ -91,19 +91,19 @@ function Banner(props) {
     slides[currentSlide];
   const no_of_slides = slides.length;
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     if (!isPaused) {
-  //       if (currentSlide === no_of_slides - 1) {
-  //         setCurrentSlide(0);
-  //       } else {
-  //         setCurrentSlide(currentSlide + 1);
-  //       }
-  //     }
-  //   }, 5000);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!isPaused) {
+        if (currentSlide === no_of_slides - 1) {
+          setCurrentSlide(0);
+        } else {
+          setCurrentSlide(currentSlide + 1);
+        }
+      }
+    }, 5000);
 
-  //   return () => clearInterval(interval);
-  // }, [currentSlide, no_of_slides, isPaused]);
+    return () => clearInterval(interval);
+  }, [currentSlide, no_of_slides, isPaused]);
 
   return (
     <Grid
