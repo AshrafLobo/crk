@@ -63,6 +63,7 @@ function DescriptionSection({
           display: "flex",
           justifyContent: "center",
           alignItems: "flex-start",
+          textAlign: { xs: "center", lg: "left" },
         }}
       >
         <Stack spacing={2} sx={{ my: { xs: 1, lg: 3 } }}>
@@ -71,7 +72,6 @@ function DescriptionSection({
             as="h1"
             sx={{
               fontWeight: "bolder",
-              textAlign: { xs: "center", lg: "left" },
             }}
           >
             {name}
@@ -83,7 +83,6 @@ function DescriptionSection({
               color: "#A0A0A0",
               fontSize: "18px",
               fontWeight: "400",
-              textAlign: { xs: "center", lg: "left" },
             }}
           >
             {title}
@@ -99,7 +98,7 @@ function DescriptionSection({
             type="button"
             variant="contained"
             sx={{
-              mx: { xs: "auto", lg: 0 },
+              mx: { xs: "auto !important", lg: 0 },
               width: { xs: "100%", sm: "fit-content" },
               py: 2,
               px: 3,

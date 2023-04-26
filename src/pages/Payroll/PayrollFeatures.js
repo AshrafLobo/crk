@@ -9,7 +9,7 @@ import Accurate from "../../assets/customIcons/accurate.png";
 import Affordable from "../../assets/customIcons/affordable.png";
 import Easy from "../../assets/customIcons/easy.png";
 
-function PayrollFeatures(props) {
+function PayrollFeatures({ handleOpen }) {
   return (
     <Grid container sx={{ my: 10 }}>
       <Grid item xs={12} md={6}>
@@ -57,7 +57,7 @@ function PayrollFeatures(props) {
         </Stack>
       </Grid>
       <Grid item xs={12} md={6}>
-        <Pay100CardSection />
+        <Pay100CardSection handleOpen={handleOpen} />
       </Grid>
     </Grid>
   );

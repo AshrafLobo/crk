@@ -1,13 +1,22 @@
 import React, { useState } from "react";
-import { Container } from "@mui/material";
+import { Container, Typography, Stack } from "@mui/material";
 
 import { Faq } from "../../components";
 
-function FaqSection(props) {
+function FaqSection() {
   const [expanded, setExpanded] = useState(false);
 
   return (
     <Container sx={{ p: 3 }}>
+      <Stack spacing={1} sx={{ py: 4, textAlign: "center" }}>
+        <Typography variant="h5" sx={{ fontWeight: "bold" }}>
+          Frequently asked questions
+        </Typography>
+        <Typography variant="body1" color="#A0A0A0">
+          See some of our frequently asked questions
+        </Typography>
+      </Stack>
+
       {faqs.map((faq) => (
         <Faq
           key={faq.id}

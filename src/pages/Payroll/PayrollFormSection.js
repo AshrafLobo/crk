@@ -7,12 +7,7 @@ import { FaqSection } from "./";
 function PayrollFormSection(props, ref) {
   return (
     <Grid container sx={{ minHeight: "500px", width: "100%" }} ref={ref}>
-      <Grid
-        item
-        xs={12}
-        md={6}
-        sx={{ minHeight: "500px", display: "flex", alignItems: "center" }}
-      >
+      <Grid item xs={12} md={6} sx={{ minHeight: "500px" }}>
         <FaqSection />
       </Grid>
       <Grid item xs={12} md={6} sx={{ p: 2, textAlign: "center" }}>

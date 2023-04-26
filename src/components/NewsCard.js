@@ -18,12 +18,12 @@ function NewsCard({
     src,
     title,
     article,
-    originalpostDate,
+    originalPostDate,
     originalSrc,
   },
 }) {
   const navigate = useNavigate();
-  const date = new Date(originalpostDate);
+  const date = new Date(originalPostDate);
   const mediumDate = dateformat(date, "mediumDate");
   const shortTime = dateformat(date, "shortTime");
 

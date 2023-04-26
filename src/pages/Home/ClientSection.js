@@ -61,17 +61,18 @@ function ClientSection(props) {
             component="p"
             sx={{ color: "#A0A0A0", mx: 2 }}
           >
-            See some of the companies we have the opportunity to work with.
+            See some of the companies we work with.
           </Typography>
         </Stack>
 
         <Grid
           container
-          spacing={2}
+          columnSpacing={{ xs: 0, md: 2 }}
+          rowSpacing={{ xs: 2, md: 0 }}
           justifyContent="center"
           sx={{
             width: "100%",
-            paddingRight: 2,
+            px: { xs: 2, sm: 0 },
           }}
         >
           {issuers &&

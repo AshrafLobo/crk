@@ -21,7 +21,7 @@ function ContactusBanner(props) {
         >
           We're eager to hear from you
         </Typography>
-        <Typography variant="body1" component="p" sx={{ mx: 2 }}>
+        <Typography variant="body1" component="p" sx={{ mx: { xs: 2, sm: 5 } }}>
           Have an urgent question? Send us a message. Click the button below to
           go to our contact us page.
         </Typography>

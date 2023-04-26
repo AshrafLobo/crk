@@ -1,9 +1,9 @@
 import React from "react";
-import { Grid, Stack, Typography } from "@mui/material";
+import { Button, Grid, Stack, Typography } from "@mui/material";
 
 import Pay100Background from "../../assets/background-4.png";
 
-function Pay100Banner(props) {
+function Pay100Banner({ handleOpen }) {
   return (
     <Grid container>
       <Grid
@@ -55,6 +55,20 @@ function Pay100Banner(props) {
             and large companies. It offers numerous benefits at an affordable
             cost.
           </Typography>
+
+          <Button
+            size="large"
+            variant="contained"
+            sx={{
+              bgcolor: "#DDA01E",
+              borderRadius: "50px",
+              fontSize: "14px",
+              width: "fit-content",
+            }}
+            onClick={handleOpen}
+          >
+            DOWNLOAD PAY 100 PLUS
+          </Button>
         </Stack>
       </Grid>
       <Grid item xs={12} md={7}>

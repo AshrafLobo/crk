@@ -1,14 +1,19 @@
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 
 import {
   PayrollBanner,
   PayrollServices,
   Pay100Banner,
   PayrollFeatures,
+  PayrollDownloadModal,
   PayrollFormSection,
 } from "./";
 
 function Payroll(props) {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   const formRef = useRef(null);
   useLayoutEffect(() => window.scrollTo(0, 0), []);
 
@@ -20,9 +25,10 @@ function Payroll(props) {
     <>
       <PayrollBanner handleButtonClick={handleButtonClick} />
       <PayrollServices handleButtonClick={handleButtonClick} />
-      <Pay100Banner />
-      <PayrollFeatures />
+      <Pay100Banner handleOpen={handleOpen} />
+      <PayrollFeatures handleOpen={handleOpen} />
       <PayrollFormSection ref={formRef} />
+      <PayrollDownloadModal open={open} handleClose={handleClose} />
     </>
   );
 }

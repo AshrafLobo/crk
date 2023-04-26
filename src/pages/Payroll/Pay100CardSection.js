@@ -1,16 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { Grid } from "@mui/material";
 
-import { Pay100Card, PayrollDownloadModal } from "./";
+import { Pay100Card } from "./";
 
 import Demo from "../../assets/customIcons/demo.png";
 import Full from "../../assets/customIcons/full.png";
 
-function Pay100CardSection(props) {
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
+function Pay100CardSection({ handleOpen }) {
   return (
     <>
       <Grid
@@ -27,7 +23,6 @@ function Pay100CardSection(props) {
           <Pay100Card {...cards[1]} handleOpen={handleOpen} />
         </Grid>
       </Grid>
-      <PayrollDownloadModal open={open} handleClose={handleClose} />
     </>
   );
 }

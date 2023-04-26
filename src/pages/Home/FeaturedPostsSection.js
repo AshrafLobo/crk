@@ -31,7 +31,7 @@ function FeaturedPostsSection(props) {
 
   return (
     <>
-      <Grid container>
+      <Grid container sx={{ m: "0 !important", py: 5 }}>
         <Grid item xs={12} md={6}>
           <Box sx={{ mx: 2 }}>
             <ReactPlayer
@@ -46,7 +46,11 @@ function FeaturedPostsSection(props) {
         <Grid item xs={12} md={6}>
           <Stack
             spacing={2}
-            sx={{ textAlign: { xs: "center", md: "left" }, mx: 2 }}
+            sx={{
+              textAlign: { xs: "center", md: "left" },
+              mx: 2,
+              mt: { xs: 5, md: 0 },
+            }}
           >
             <Stack spacing={0}>
               <Typography

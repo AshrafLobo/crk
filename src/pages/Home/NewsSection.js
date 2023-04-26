@@ -16,7 +16,7 @@ function NewsSection(props) {
     (async () => {
       let { data } = await get("news");
       const sortedData = data.sort(
-        (a, b) => new Date(b.originalpostDate) - new Date(a.originalpostDate)
+        (a, b) => new Date(b.originalPostDate) - new Date(a.originalPostDate)
       );
       setNews(sortedData.slice(0, 3));
     })();
@@ -70,11 +70,13 @@ function NewsSection(props) {
 
         <Grid
           container
-          spacing={2}
           justifyContent="center"
+          columnSpacing={{ xs: 0, md: 2 }}
+          rowSpacing={{ xs: 2, md: 0 }}
           sx={{
             width: "100%",
-            paddingRight: 2,
+            m: "0 !important",
+            px: { xs: 2, sm: 0 },
           }}
         >
           {news &&

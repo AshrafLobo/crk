@@ -16,7 +16,7 @@ function Issuer(props) {
     (async () => {
       if (params.id) {
         const { data } = await get(`issuers/${params.id}`);
-        setIssuer(data[0]);
+        setIssuer(data);
       }
     })();
   }, [issuer, params]);
