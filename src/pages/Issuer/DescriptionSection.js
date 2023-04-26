@@ -98,7 +98,7 @@ function DescriptionSection({
             type="button"
             variant="contained"
             sx={{
-              mx: { xs: "auto !important", lg: 0 },
+              mx: { xs: "auto !important", lg: "0 !important" },
               width: { xs: "100%", sm: "fit-content" },
               py: 2,
               px: 3,
