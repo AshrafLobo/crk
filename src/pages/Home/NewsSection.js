@@ -14,11 +14,13 @@ function NewsSection(props) {
   const [news, setNews] = useState([]);
   useLayoutEffect(() => {
     (async () => {
-      let { data } = await get("news");
-      const sortedData = data.sort(
+      let { data: pageData } = await get("news");
+      let { data } = pageData;
+
+      /* const sortedData = data.sort(
         (a, b) => new Date(b.originalPostDate) - new Date(a.originalPostDate)
-      );
-      setNews(sortedData.slice(0, 3));
+      ); */
+      setNews(data.slice(0, 3));
     })();
   }, []);
 

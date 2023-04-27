@@ -8,7 +8,7 @@ function FaqSection(props) {
 
   return (
     <Container sx={{ p: 3 }}>
-    <Stack spacing={1} sx={{ py: 4, textAlign: "center" }}>
+      <Stack spacing={1} sx={{ py: 4, textAlign: "center" }}>
         <Typography variant="h5" sx={{ fontWeight: "bold" }}>
           Frequently asked questions
         </Typography>

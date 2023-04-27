@@ -15,7 +15,7 @@ function TabsSection(props) {
     <Paper
       square
       elevation={0}
-      sx={{ bgcolor: "background.paper", my: 5, px: { xs: 3, lg: 0 } }}
+      sx={{ bgcolor: "background.paper", mb: 0, mt: 5, px: { xs: 3, lg: 5 } }}
     >
       <TabContext value={value}>
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
