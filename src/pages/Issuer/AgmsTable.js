@@ -69,11 +69,11 @@ function AgmsTable(props) {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell>
-                    {dateformat(new Date(agm.agmDate), "mm/dd/yyyy h:MM TT")}
+                    {dateformat(new Date(agm.agmDate).toUTCString(), "mm/dd/yyyy h:MM TT")}
                   </TableCell>
                   <TableCell>{agm.title}</TableCell>
                   <TableCell>
-                    {dateformat(new Date(agm.agmDate), "yyyy")}
+                    {dateformat(new Date(agm.agmDate).toUTCString(), "yyyy")}
                   </TableCell>
                   <TableCell>{agm.venue}</TableCell>
                   <TableCell>

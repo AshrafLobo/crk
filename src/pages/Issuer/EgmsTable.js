@@ -68,7 +68,7 @@ function EgmsTable(props) {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell>
-                    {dateformat(new Date(egm.egmDate), "mm/dd/yyyy h:MM TT")}
+                    {dateformat(new Date(egm.egmDate).toUTCString(), "mm/dd/yyyy h:MM TT")}
                   </TableCell>
                   <TableCell>{egm.title}</TableCell>
                   <TableCell>
