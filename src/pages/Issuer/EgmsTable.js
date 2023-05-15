@@ -68,11 +68,11 @@ function EgmsTable(props) {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell>
-                    {dateformat(new Date(egm.egmDate).toISOString(), "mm/dd/yyyy h:MM TT")}
+                    {dateformat(new Date(egm.egmDate).toISOString(), "mm/dd/yyyy h:MM TT", true)}
                   </TableCell>
                   <TableCell>{egm.title}</TableCell>
                   <TableCell>
-                    {dateformat(new Date(egm.egmDate).toISOString(), "yyyy")}
+                    {dateformat(new Date(egm.egmDate).toISOString(), "yyyy", true)}
                   </TableCell>
                   <TableCell>{egm.venue}</TableCell>
                   <TableCell>

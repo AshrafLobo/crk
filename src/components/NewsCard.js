@@ -24,8 +24,8 @@ function NewsCard({
 }) {
   const navigate = useNavigate();
   const date = new Date(originalPostDate).toISOString();
-  const mediumDate = dateformat(date, "mediumDate");
-  const shortTime = dateformat(date, "shortTime");
+  const mediumDate = dateformat(date, "mediumDate", true);
+  const shortTime = dateformat(date, "shortTime", true);
 
   return (
     <Card

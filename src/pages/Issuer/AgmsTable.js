@@ -33,6 +33,7 @@ function AgmsTable(props) {
         } else {
           setAgms([]);
         }
+		
       }
     })();
   }, [params]);
@@ -69,11 +70,11 @@ function AgmsTable(props) {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell>
-                    {dateformat(new Date(agm.agmDate).toISOString(), "mm/dd/yyyy h:MM TT")}
+                    {dateformat(new Date(agm.agmDate).toISOString(), "mm/dd/yyyy h:MM TT", true)}
                   </TableCell>
                   <TableCell>{agm.title}</TableCell>
                   <TableCell>
-                    {dateformat(new Date(agm.agmDate).toISOString(), "yyyy")}
+                    {dateformat(new Date(agm.agmDate).toISOString(), "yyyy", true)}
                   </TableCell>
                   <TableCell>{agm.venue}</TableCell>
                   <TableCell>

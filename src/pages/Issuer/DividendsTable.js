@@ -71,17 +71,19 @@ function DividendsTable(props) {
                   <TableCell>
                     {dateformat(
                       new Date(dividend.bookClosureDate).toISOString(),
-                      "paddedShortDate"
+                      "paddedShortDate",
+					  true
                     )}
                   </TableCell>
                   <TableCell>
                     {dateformat(
                       new Date(dividend.disbursmentDate).toISOString(),
-                      "paddedShortDate"
+                      "paddedShortDate",
+					  true
                     )}
                   </TableCell>
                   <TableCell>
-                    {dateformat(new Date(dividend.bookClosureDate), "yyyy")}
+                    {dateformat(new Date(dividend.bookClosureDate), "yyyy", true)}
                   </TableCell>
                   <TableCell>{dividend.dividendType}</TableCell>
                   <TableCell>{dividend.dividendRate}</TableCell>
