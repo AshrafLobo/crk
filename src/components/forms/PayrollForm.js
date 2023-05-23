@@ -53,12 +53,12 @@ function PayrollForm(props) {
   });
 
   const onSubmit = async (values, { resetForm }) => {
-    const { data } = await post("payrollForms", values);
-    resetForm();
-    if (data && typeof data === "object") {
+    try {
+      await post("payrollForms", values);
+      resetForm();
       setMessage("Message sent successfully");
-    } else {
-      setMessage("Message not sent. Somthing went wrong", "error");
+    } catch (error) {
+      setMessage("Message not sent. Something went wrong", "error");
     }
   };
 

@@ -67,12 +67,12 @@ function ShareRegistrationForm(props) {
   });
 
   const onSubmit = async (values, { resetForm }) => {
-    const { data } = await post("shareRegistrationForms", values);
-    resetForm();
-    if (data && typeof data === "object") {
+    try {
+      await post("shareRegistrationForms", values);
+      resetForm();
       setMessage("Message sent successfully");
-    } else {
-      setMessage("Message not sent. Somthing went wrong", "error");
+    } catch (error) {
+      setMessage("Message not sent. Something went wrong", "error");
     }
   };
 

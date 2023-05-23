@@ -36,12 +36,12 @@ function ContactUsForm(props) {
   });
 
   const onSubmit = async (values, { resetForm }) => {
-    const { data } = await post("contactUsForms", values);
-    resetForm();
-    if (data && typeof data === "object") {
+    try {
+      await post("contactUsForms", values);
       setMessage("Message sent successfully");
-    } else {
-      setMessage("Message not sent. Somthing went wrong", "error");
+      resetForm();
+    } catch (error) {
+      setMessage("Message not sent. Something went wrong", "error");
     }
   };
 

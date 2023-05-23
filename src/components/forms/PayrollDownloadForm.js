@@ -38,21 +38,21 @@ function PayrollDownloadForm({ handleClose }) {
   });
 
   const onSubmit = async (values, { resetForm }) => {
-    const { data } = await post("payrollDownloadForms", values);
-    resetForm();
-    if (data && typeof data === "object") {
+    try {
+      await post("payrollDownloadForms", values);
+      setMessage("Message sent successfully. Your download will begin shortly");
       window.open(
         `${process.env.REACT_APP_API_URL}/downloads/Setup.exe`,
         "_blank"
       );
-      setMessage("Message sent successfully. Your download will begin shortly");
-    } else {
-      setMessage("Message not sent. Somthing went wrong", "error");
-    }
+      resetForm();
 
-    setTimeout(() => {
-      handleClose();
-    }, 6000);
+      setTimeout(() => {
+        handleClose();
+      }, 4000);
+    } catch (error) {
+      setMessage("Message not sent. Something went wrong", "error");
+    }
   };
 
   return (
